@@ -1,0 +1,24 @@
+T:\Aplicação Windows Forms VB.NET\ProjectOne\ProjectOne\bin\Debug\ProjectOne.exe.config
+T:\Aplicação Windows Forms VB.NET\ProjectOne\ProjectOne\bin\Debug\ProjectOne.exe
+T:\Aplicação Windows Forms VB.NET\ProjectOne\ProjectOne\bin\Debug\ProjectOne.pdb
+T:\Aplicação Windows Forms VB.NET\ProjectOne\ProjectOne\bin\Debug\ProjectOne.xml
+T:\Aplicação Windows Forms VB.NET\ProjectOne\ProjectOne\obj\Debug\ProjectOne.vbproj.AssemblyReference.cache
+T:\Aplicação Windows Forms VB.NET\ProjectOne\ProjectOne\obj\Debug\ProjectOne.Form1.resources
+T:\Aplicação Windows Forms VB.NET\ProjectOne\ProjectOne\obj\Debug\ProjectOne.Resources.resources
+T:\Aplicação Windows Forms VB.NET\ProjectOne\ProjectOne\obj\Debug\ProjectOne.vbproj.GenerateResource.cache
+T:\Aplicação Windows Forms VB.NET\ProjectOne\ProjectOne\obj\Debug\ProjectOne.vbproj.CoreCompileInputs.cache
+T:\Aplicação Windows Forms VB.NET\ProjectOne\ProjectOne\obj\Debug\ProjectOne.exe
+T:\Aplicação Windows Forms VB.NET\ProjectOne\ProjectOne\obj\Debug\ProjectOne.xml
+T:\Aplicação Windows Forms VB.NET\ProjectOne\ProjectOne\obj\Debug\ProjectOne.pdb
+T:\WinForms\ProjectOne\ProjectOne\bin\Debug\ProjectOne.exe.config
+T:\WinForms\ProjectOne\ProjectOne\bin\Debug\ProjectOne.exe
+T:\WinForms\ProjectOne\ProjectOne\bin\Debug\ProjectOne.pdb
+T:\WinForms\ProjectOne\ProjectOne\bin\Debug\ProjectOne.xml
+T:\WinForms\ProjectOne\ProjectOne\obj\Debug\ProjectOne.vbproj.AssemblyReference.cache
+T:\WinForms\ProjectOne\ProjectOne\obj\Debug\ProjectOne.Form1.resources
+T:\WinForms\ProjectOne\ProjectOne\obj\Debug\ProjectOne.Resources.resources
+T:\WinForms\ProjectOne\ProjectOne\obj\Debug\ProjectOne.vbproj.GenerateResource.cache
+T:\WinForms\ProjectOne\ProjectOne\obj\Debug\ProjectOne.vbproj.CoreCompileInputs.cache
+T:\WinForms\ProjectOne\ProjectOne\obj\Debug\ProjectOne.exe
+T:\WinForms\ProjectOne\ProjectOne\obj\Debug\ProjectOne.xml
+T:\WinForms\ProjectOne\ProjectOne\obj\Debug\ProjectOne.pdb
