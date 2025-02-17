@@ -52,6 +52,7 @@ Partial Class Form1
         Me.CelularDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TelefoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ButtonLimparForm = New System.Windows.Forms.Button()
         CType(Me.DataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ContatosBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Database2DataSet1,System.ComponentModel.ISupportInitialize).BeginInit
@@ -179,7 +180,7 @@ Partial Class Form1
         '
         Me.ButtonSair.Location = New System.Drawing.Point(29, 18)
         Me.ButtonSair.Name = "ButtonSair"
-        Me.ButtonSair.Size = New System.Drawing.Size(80, 19)
+        Me.ButtonSair.Size = New System.Drawing.Size(80, 27)
         Me.ButtonSair.TabIndex = 14
         Me.ButtonSair.Text = "Sair"
         Me.ButtonSair.UseVisualStyleBackColor = true
@@ -280,12 +281,22 @@ Partial Class Form1
         Me.EmailDataGridViewTextBoxColumn.ReadOnly = true
         Me.EmailDataGridViewTextBoxColumn.Width = 160
         '
+        'ButtonLimparForm
+        '
+        Me.ButtonLimparForm.Location = New System.Drawing.Point(571, 18)
+        Me.ButtonLimparForm.Name = "ButtonLimparForm"
+        Me.ButtonLimparForm.Size = New System.Drawing.Size(101, 27)
+        Me.ButtonLimparForm.TabIndex = 19
+        Me.ButtonLimparForm.Text = "Limpar Formulario"
+        Me.ButtonLimparForm.UseVisualStyleBackColor = true
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(699, 462)
+        Me.Controls.Add(Me.ButtonLimparForm)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.ButtonSair)
@@ -345,4 +356,5 @@ End Sub
     Friend WithEvents CelularDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TelefoneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ButtonLimparForm As Button
 End Class

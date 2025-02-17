@@ -106,4 +106,8 @@
     Private Sub ButtonSair_Click(sender As Object, e As EventArgs) Handles ButtonSair.Click
         Application.Exit()
     End Sub
+
+    Private Sub ButtonLimparForm_Click(sender As Object, e As EventArgs) Handles ButtonLimparForm.Click
+        LimparForm()
+    End Sub
 End Class
