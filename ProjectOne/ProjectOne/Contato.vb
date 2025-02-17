@@ -74,7 +74,7 @@ Public Class Contato
         Dim tabela As New DataTable
 
         Try
-            query = "SELECT id, nome, endereco, celular, telefone, email FROM contatos;"
+            query = "SELECT id, nome, endereco, celular, telefone, email FROM contatos ORDER BY id DESC;"
             comando = New OleDbCommand
             comando.Connection = conn
             comando.CommandType = CommandType.Text
