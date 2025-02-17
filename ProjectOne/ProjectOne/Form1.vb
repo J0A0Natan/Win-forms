@@ -3,7 +3,7 @@
 
     Private Sub ButtonNovo_Click(sender As Object, e As EventArgs) Handles ButtonNovo.Click
         If TxtNome.Text = "" And TxtEnd.Text = "" And TxtCell.Text = "" And TxtEmail.Text = ""
-            MessageBox.Show("Preencha todos os campos necessarios!")
+            MessageBox.Show("Preencha todos os campos necessarios!", "Atenção" )
         Else
             Try
                 objContato.Nome = TxtNome.Text
@@ -79,7 +79,7 @@
 
     Private Sub ButtonSalvar_Click(sender As Object, e As EventArgs) Handles ButtonSalvar.Click
         If TxtNome.Text = "" And TxtEnd.Text = "" And TxtCell.Text = "" And TxtEmail.Text = ""
-            MessageBox.Show("Preencha todos os campos necessarios!")
+            MessageBox.Show("Preencha todos os campos necessarios!", "Atenção")
         Else
             Dim id As Integer
             id= DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(0).Value

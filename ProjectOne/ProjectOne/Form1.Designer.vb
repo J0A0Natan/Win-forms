@@ -206,7 +206,7 @@ Partial Class Form1
         Me.DataGridView1.Location = New System.Drawing.Point(29, 220)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = true
-        Me.DataGridView1.Size = New System.Drawing.Size(643, 230)
+        Me.DataGridView1.Size = New System.Drawing.Size(643, 275)
         Me.DataGridView1.TabIndex = 18
         '
         'ContatosBindingSource1
@@ -295,7 +295,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(699, 462)
+        Me.ClientSize = New System.Drawing.Size(699, 507)
         Me.Controls.Add(Me.ButtonLimparForm)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label6)
