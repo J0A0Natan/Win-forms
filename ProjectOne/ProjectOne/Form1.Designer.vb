@@ -40,18 +40,18 @@ Partial Class Form1
         Me.ButtonSair = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.ContatosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Database2DataSet1 = New ProjectOne.Database2DataSet1()
-        Me.ContatosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Database2DataSet = New ProjectOne.Database2DataSet()
-        Me.ContatosTableAdapter = New ProjectOne.Database2DataSetTableAdapters.contatosTableAdapter()
-        Me.ContatosTableAdapter1 = New ProjectOne.Database2DataSet1TableAdapters.contatosTableAdapter()
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NomeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EnderecoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CelularDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TelefoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContatosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Database2DataSet1 = New ProjectOne.Database2DataSet1()
+        Me.ContatosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Database2DataSet = New ProjectOne.Database2DataSet()
+        Me.ContatosTableAdapter = New ProjectOne.Database2DataSetTableAdapters.contatosTableAdapter()
+        Me.ContatosTableAdapter1 = New ProjectOne.Database2DataSet1TableAdapters.contatosTableAdapter()
         Me.ButtonLimparForm = New System.Windows.Forms.Button()
         CType(Me.DataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ContatosBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
@@ -200,6 +200,7 @@ Partial Class Form1
         Me.DataGridView1.AllowUserToAddRows = false
         Me.DataGridView1.AllowUserToDeleteRows = false
         Me.DataGridView1.AutoGenerateColumns = false
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.NomeDataGridViewTextBoxColumn, Me.EnderecoDataGridViewTextBoxColumn, Me.CelularDataGridViewTextBoxColumn, Me.TelefoneDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ContatosBindingSource1
@@ -209,41 +210,12 @@ Partial Class Form1
         Me.DataGridView1.Size = New System.Drawing.Size(643, 275)
         Me.DataGridView1.TabIndex = 18
         '
-        'ContatosBindingSource1
-        '
-        Me.ContatosBindingSource1.DataMember = "contatos"
-        Me.ContatosBindingSource1.DataSource = Me.Database2DataSet1
-        '
-        'Database2DataSet1
-        '
-        Me.Database2DataSet1.DataSetName = "Database2DataSet1"
-        Me.Database2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ContatosBindingSource
-        '
-        Me.ContatosBindingSource.DataMember = "contatos"
-        Me.ContatosBindingSource.DataSource = Me.Database2DataSet
-        '
-        'Database2DataSet
-        '
-        Me.Database2DataSet.DataSetName = "Database2DataSet"
-        Me.Database2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ContatosTableAdapter
-        '
-        Me.ContatosTableAdapter.ClearBeforeFill = true
-        '
-        'ContatosTableAdapter1
-        '
-        Me.ContatosTableAdapter1.ClearBeforeFill = true
-        '
         'IdDataGridViewTextBoxColumn
         '
         Me.IdDataGridViewTextBoxColumn.DataPropertyName = "id"
         Me.IdDataGridViewTextBoxColumn.HeaderText = "id"
         Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
         Me.IdDataGridViewTextBoxColumn.ReadOnly = true
-        Me.IdDataGridViewTextBoxColumn.Width = 40
         '
         'NomeDataGridViewTextBoxColumn
         '
@@ -279,7 +251,34 @@ Partial Class Form1
         Me.EmailDataGridViewTextBoxColumn.HeaderText = "email"
         Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
         Me.EmailDataGridViewTextBoxColumn.ReadOnly = true
-        Me.EmailDataGridViewTextBoxColumn.Width = 160
+        '
+        'ContatosBindingSource1
+        '
+        Me.ContatosBindingSource1.DataMember = "contatos"
+        Me.ContatosBindingSource1.DataSource = Me.Database2DataSet1
+        '
+        'Database2DataSet1
+        '
+        Me.Database2DataSet1.DataSetName = "Database2DataSet1"
+        Me.Database2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ContatosBindingSource
+        '
+        Me.ContatosBindingSource.DataMember = "contatos"
+        Me.ContatosBindingSource.DataSource = Me.Database2DataSet
+        '
+        'Database2DataSet
+        '
+        Me.Database2DataSet.DataSetName = "Database2DataSet"
+        Me.Database2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ContatosTableAdapter
+        '
+        Me.ContatosTableAdapter.ClearBeforeFill = true
+        '
+        'ContatosTableAdapter1
+        '
+        Me.ContatosTableAdapter1.ClearBeforeFill = true
         '
         'ButtonLimparForm
         '
