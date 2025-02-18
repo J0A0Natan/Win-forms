@@ -89,25 +89,30 @@
         If TxtNome.Text = "" Or TxtEnd.Text = "" Or TxtCell.Text = "" Or TxtEmail.Text = ""
             MessageBox.Show("Preencha todos os campos necessarios!", "Atenção")
         Else
-            Dim id As Integer
-            id= DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(0).Value
-            objContato.Id = id
-            objContato.Nome = TxtNome.Text
-            objContato.Endereco = TxtEnd.Text
-            objContato.Celular = TxtCell.Text
-            objContato.Telefone = TxtTelefone.Text
-            objContato.Email = TxtEmail.Text
-            Try
-                If objContato.AtualizarContato() = True Then
-                    MsgBox("Contato editado com sucesso!", vbInformation)
-                    CarregarGrid()
-                    LimparForm()
-                Else
-                    MsgBox("ERRO: Contato não editado com sucesso!", vbObjectError)
-                End If
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-            End Try
+            Dim resultado As DialogResult
+            resultado = MessageBox.Show("Tem certeza que deseja alterar esse contato?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+            If resultado = DialogResult.Yes Then
+                Dim id As Integer
+                id= DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(0).Value
+                objContato.Id = id
+                objContato.Nome = TxtNome.Text
+                objContato.Endereco = TxtEnd.Text
+                objContato.Celular = TxtCell.Text
+                objContato.Telefone = TxtTelefone.Text
+                objContato.Email = TxtEmail.Text
+                Try
+                    If objContato.AtualizarContato() = True Then
+                        MsgBox("Contato editado com sucesso!", vbInformation)
+                        CarregarGrid()
+                        LimparForm()
+                    Else
+                        MsgBox("ERRO: Contato não editado com sucesso!", vbObjectError)
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                End Try
+            End If
         End If
     End Sub
 
