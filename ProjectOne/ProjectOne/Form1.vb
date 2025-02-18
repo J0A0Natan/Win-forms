@@ -78,7 +78,7 @@
     End Sub
 
     Private Sub ButtonSalvar_Click(sender As Object, e As EventArgs) Handles ButtonSalvar.Click
-        If TxtNome.Text = "" And TxtEnd.Text = "" And TxtCell.Text = "" And TxtEmail.Text = ""
+        If TxtNome.Text = "" Or TxtEnd.Text = "" Or TxtCell.Text = "" Or TxtEmail.Text = ""
             MessageBox.Show("Preencha todos os campos necessarios!", "Atenção")
         Else
             Dim id As Integer
