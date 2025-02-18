@@ -1,5 +1,32 @@
 ﻿Public Class Form1
-    Private objContato As New Contato
+    Private objContato As Object
+
+    Public Function tipoCon(i As Integer)
+        If i = 1 Then
+            objContato = New Contato()
+        ElseIf i = 2 Then
+            objContato = New ContatoSQL()
+        End If
+    End Function
+    
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        tipoCon(1)
+        CarregarGrid()
+    End Sub
+
+    Private Function CarregarGrid()
+        
+        Dim tabela As DataTable = objContato.ListarContato()
+        DataGridView1.DataSource = tabela
+    End Function
+
+    Private Function LimparForm()
+        TxtNome.Text = ""
+        TxtEnd.Text = ""
+        TxtTelefone.Text = ""
+        TxtCell.Text = ""
+        TxtEmail.Text = ""
+    End Function
 
     Private Sub ButtonNovo_Click(sender As Object, e As EventArgs) Handles ButtonNovo.Click
         If TxtNome.Text = "" Or TxtEnd.Text = "" Or TxtCell.Text = "" Or TxtEmail.Text = ""
@@ -12,17 +39,16 @@
                 objContato.Telefone = TxtTelefone.Text
                 objContato.Email = TxtEmail.Text
                 If objContato.NovoContato() = True Then
-                    MessageBox.Show("Contato cadastrado com sucesso!")
+                    MsgBox("Contato cadastrado com sucesso!", vbInformation)
+                    CarregarGrid()
+                    LimparForm()
                 Else
-                    MessageBox.Show("ERRO: Contato não cadastrado com sucesso!")
+                    MsgBox("ERRO: Contato não cadastrado!", vbObjectError)
                 End If
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             End Try
         End If
-        CarregarGrid()
-        LimparForm()
-        
     End Sub
 
     Private Sub ButtonEdit_Click(sender As Object, e As EventArgs) Handles ButtonEdit.Click
@@ -39,24 +65,6 @@
         TxtTelefone.Text = dados(4).ToString
         TxtEmail.Text = dados(5).ToString
 
-    End Sub
-
-    Private Function CarregarGrid()
-        Dim tabela As New DataTable
-        tabela = objContato.ListarContato()
-        DataGridView1.DataSource = tabela
-    End Function
-
-    Private Function LimparForm()
-        TxtNome.Text = ""
-        TxtEnd.Text = ""
-        TxtTelefone.Text = ""
-        TxtCell.Text = ""
-        TxtEmail.Text = ""
-    End Function
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CarregarGrid()
     End Sub
 
     Private Sub ButtonDell_Click(sender As Object, e As EventArgs) Handles ButtonDell.Click
@@ -83,19 +91,19 @@
         Else
             Dim id As Integer
             id= DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(0).Value
+            objContato.Id = id
+            objContato.Nome = TxtNome.Text
+            objContato.Endereco = TxtEnd.Text
+            objContato.Celular = TxtCell.Text
+            objContato.Telefone = TxtTelefone.Text
+            objContato.Email = TxtEmail.Text
             Try
-                objContato.Id = id
-                objContato.Nome = TxtNome.Text
-                objContato.Endereco = TxtEnd.Text
-                objContato.Celular = TxtCell.Text
-                objContato.Telefone = TxtTelefone.Text
-                objContato.Email = TxtEmail.Text
                 If objContato.AtualizarContato() = True Then
-                    MessageBox.Show("Contato editado com sucesso!")
+                    MsgBox("Contato editado com sucesso!", vbInformation)
                     CarregarGrid()
                     LimparForm()
                 Else
-                    MessageBox.Show("ERRO: Contato não editado com sucesso!")
+                    MsgBox("ERRO: Contato não editado com sucesso!", vbObjectError)
                 End If
             Catch ex As Exception
                 MessageBox.Show(ex.Message)

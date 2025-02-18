@@ -85,13 +85,13 @@ Public Class Contato
             conn.Close()
 
             Return tabela
-            
+
         Catch ex As Exception
             Throw ex
         End Try
     End Function
 
-    Public Function ListarContatoEditar(idCont As Integer) 
+    Public Function ListarContatoEditar(idCont As Integer)
         Dim query As String
         Dim dados(5) As String
 
@@ -113,7 +113,7 @@ Public Class Contato
             conn.Close()
 
             Return dados
-            
+
         Catch ex As Exception
             Throw ex
         End Try
@@ -134,7 +134,7 @@ Public Class Contato
             retorno = comando.ExecuteNonQuery
             conn.Close()
             Return retorno
-            
+
         Catch ex As Exception
             Throw ex
         End Try
