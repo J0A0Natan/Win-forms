@@ -10,7 +10,7 @@
     End Function
     
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        tipoCon(1)
+        tipoCon(2)
         CarregarGrid()
     End Sub
 
