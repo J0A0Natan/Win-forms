@@ -2,7 +2,7 @@
     Private objContato As New Contato
 
     Private Sub ButtonNovo_Click(sender As Object, e As EventArgs) Handles ButtonNovo.Click
-        If TxtNome.Text = "" And TxtEnd.Text = "" And TxtCell.Text = "" And TxtEmail.Text = ""
+        If TxtNome.Text = "" Or TxtEnd.Text = "" Or TxtCell.Text = "" Or TxtEmail.Text = ""
             MessageBox.Show("Preencha todos os campos necessarios!", "Atenção" )
         Else
             Try

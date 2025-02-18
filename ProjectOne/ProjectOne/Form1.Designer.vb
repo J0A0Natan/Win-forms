@@ -40,12 +40,6 @@ Partial Class Form1
         Me.ButtonSair = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NomeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EnderecoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CelularDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TelefoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ContatosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Database2DataSet1 = New ProjectOne.Database2DataSet1()
         Me.ContatosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -53,6 +47,12 @@ Partial Class Form1
         Me.ContatosTableAdapter = New ProjectOne.Database2DataSetTableAdapters.contatosTableAdapter()
         Me.ContatosTableAdapter1 = New ProjectOne.Database2DataSet1TableAdapters.contatosTableAdapter()
         Me.ButtonLimparForm = New System.Windows.Forms.Button()
+        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NomeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EnderecoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CelularDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TelefoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ContatosBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Database2DataSet1,System.ComponentModel.ISupportInitialize).BeginInit
@@ -210,6 +210,43 @@ Partial Class Form1
         Me.DataGridView1.Size = New System.Drawing.Size(643, 275)
         Me.DataGridView1.TabIndex = 18
         '
+        'ContatosBindingSource1
+        '
+        Me.ContatosBindingSource1.DataMember = "contatos"
+        Me.ContatosBindingSource1.DataSource = Me.Database2DataSet1
+        '
+        'Database2DataSet1
+        '
+        Me.Database2DataSet1.DataSetName = "Database2DataSet1"
+        Me.Database2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ContatosBindingSource
+        '
+        Me.ContatosBindingSource.DataMember = "contatos"
+        Me.ContatosBindingSource.DataSource = Me.Database2DataSet
+        '
+        'Database2DataSet
+        '
+        Me.Database2DataSet.DataSetName = "Database2DataSet"
+        Me.Database2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ContatosTableAdapter
+        '
+        Me.ContatosTableAdapter.ClearBeforeFill = true
+        '
+        'ContatosTableAdapter1
+        '
+        Me.ContatosTableAdapter1.ClearBeforeFill = true
+        '
+        'ButtonLimparForm
+        '
+        Me.ButtonLimparForm.Location = New System.Drawing.Point(571, 18)
+        Me.ButtonLimparForm.Name = "ButtonLimparForm"
+        Me.ButtonLimparForm.Size = New System.Drawing.Size(101, 27)
+        Me.ButtonLimparForm.TabIndex = 19
+        Me.ButtonLimparForm.Text = "Limpar Formulario"
+        Me.ButtonLimparForm.UseVisualStyleBackColor = true
+        '
         'IdDataGridViewTextBoxColumn
         '
         Me.IdDataGridViewTextBoxColumn.DataPropertyName = "id"
@@ -251,43 +288,6 @@ Partial Class Form1
         Me.EmailDataGridViewTextBoxColumn.HeaderText = "email"
         Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
         Me.EmailDataGridViewTextBoxColumn.ReadOnly = true
-        '
-        'ContatosBindingSource1
-        '
-        Me.ContatosBindingSource1.DataMember = "contatos"
-        Me.ContatosBindingSource1.DataSource = Me.Database2DataSet1
-        '
-        'Database2DataSet1
-        '
-        Me.Database2DataSet1.DataSetName = "Database2DataSet1"
-        Me.Database2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ContatosBindingSource
-        '
-        Me.ContatosBindingSource.DataMember = "contatos"
-        Me.ContatosBindingSource.DataSource = Me.Database2DataSet
-        '
-        'Database2DataSet
-        '
-        Me.Database2DataSet.DataSetName = "Database2DataSet"
-        Me.Database2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ContatosTableAdapter
-        '
-        Me.ContatosTableAdapter.ClearBeforeFill = true
-        '
-        'ContatosTableAdapter1
-        '
-        Me.ContatosTableAdapter1.ClearBeforeFill = true
-        '
-        'ButtonLimparForm
-        '
-        Me.ButtonLimparForm.Location = New System.Drawing.Point(571, 18)
-        Me.ButtonLimparForm.Name = "ButtonLimparForm"
-        Me.ButtonLimparForm.Size = New System.Drawing.Size(101, 27)
-        Me.ButtonLimparForm.TabIndex = 19
-        Me.ButtonLimparForm.Text = "Limpar Formulario"
-        Me.ButtonLimparForm.UseVisualStyleBackColor = true
         '
         'Form1
         '
@@ -349,11 +349,11 @@ End Sub
     Friend WithEvents Database2DataSet1 As Database2DataSet1
     Friend WithEvents ContatosBindingSource1 As BindingSource
     Friend WithEvents ContatosTableAdapter1 As Database2DataSet1TableAdapters.contatosTableAdapter
+    Friend WithEvents ButtonLimparForm As Button
     Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NomeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EnderecoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CelularDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TelefoneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ButtonLimparForm As Button
 End Class
