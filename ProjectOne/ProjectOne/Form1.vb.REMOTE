@@ -1,6 +1,5 @@
 ﻿Public Class Form1
     Private objContato As Object
-    Public Shared tipoConFormNum As Integer
 
     Public Function tipoCon(i As Integer)
         If i = 1 Then
@@ -11,7 +10,7 @@
     End Function
     
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        tipoCon(tipoConFormNum)
+        tipoCon(2)
         CarregarGrid()
     End Sub
 
@@ -126,6 +125,6 @@
     End Sub
 
     Private Sub ConfiguraçõesDBToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfiguraçõesDBToolStripMenuItem.Click
-        ConfigDB.ShowDialog()
+        LimparForm()
     End Sub
 End Class
