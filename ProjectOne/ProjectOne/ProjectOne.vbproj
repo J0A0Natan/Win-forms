@@ -74,6 +74,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigDB.Designer.vb">
+      <DependentUpon>ConfigDB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigDB.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Contato.vb" />
     <Compile Include="ContatoSQL.vb" />
     <Compile Include="Database2DataSet.Designer.vb">
@@ -111,6 +117,9 @@
     <Compile Include="SQL.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ConfigDB.resx">
+      <DependentUpon>ConfigDB.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>

@@ -37,9 +37,14 @@ Partial Class Form1
         Me.ButtonSalvar = New System.Windows.Forms.Button()
         Me.ButtonEdit = New System.Windows.Forms.Button()
         Me.ButtonDell = New System.Windows.Forms.Button()
-        Me.ButtonSair = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NomeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EnderecoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CelularDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TelefoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ContatosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Database2DataSet1 = New ProjectOne.Database2DataSet1()
         Me.ContatosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -47,23 +52,22 @@ Partial Class Form1
         Me.ContatosTableAdapter = New ProjectOne.Database2DataSetTableAdapters.contatosTableAdapter()
         Me.ContatosTableAdapter1 = New ProjectOne.Database2DataSet1TableAdapters.contatosTableAdapter()
         Me.ButtonLimparForm = New System.Windows.Forms.Button()
-        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NomeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EnderecoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CelularDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TelefoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConfiguraçõesDBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ContatosBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Database2DataSet1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ContatosBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Database2DataSet,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.MenuStrip1.SuspendLayout
         Me.SuspendLayout
         '
         'Label1
         '
         Me.Label1.AutoSize = true
-        Me.Label1.Location = New System.Drawing.Point(26, 69)
+        Me.Label1.Location = New System.Drawing.Point(25, 95)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(35, 13)
         Me.Label1.TabIndex = 0
@@ -72,7 +76,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = true
-        Me.Label2.Location = New System.Drawing.Point(26, 95)
+        Me.Label2.Location = New System.Drawing.Point(25, 121)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(53, 13)
         Me.Label2.TabIndex = 1
@@ -81,7 +85,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = true
-        Me.Label3.Location = New System.Drawing.Point(26, 121)
+        Me.Label3.Location = New System.Drawing.Point(25, 147)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(39, 13)
         Me.Label3.TabIndex = 2
@@ -90,7 +94,7 @@ Partial Class Form1
         'Label4
         '
         Me.Label4.AutoSize = true
-        Me.Label4.Location = New System.Drawing.Point(26, 147)
+        Me.Label4.Location = New System.Drawing.Point(25, 173)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 13)
         Me.Label4.TabIndex = 3
@@ -99,7 +103,7 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = true
-        Me.Label5.Location = New System.Drawing.Point(26, 173)
+        Me.Label5.Location = New System.Drawing.Point(25, 199)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(35, 13)
         Me.Label5.TabIndex = 4
@@ -107,42 +111,42 @@ Partial Class Form1
         '
         'TxtNome
         '
-        Me.TxtNome.Location = New System.Drawing.Point(128, 66)
+        Me.TxtNome.Location = New System.Drawing.Point(127, 92)
         Me.TxtNome.Name = "TxtNome"
         Me.TxtNome.Size = New System.Drawing.Size(294, 20)
         Me.TxtNome.TabIndex = 5
         '
         'TxtEnd
         '
-        Me.TxtEnd.Location = New System.Drawing.Point(128, 92)
+        Me.TxtEnd.Location = New System.Drawing.Point(127, 118)
         Me.TxtEnd.Name = "TxtEnd"
         Me.TxtEnd.Size = New System.Drawing.Size(294, 20)
         Me.TxtEnd.TabIndex = 6
         '
         'TxtCell
         '
-        Me.TxtCell.Location = New System.Drawing.Point(128, 118)
+        Me.TxtCell.Location = New System.Drawing.Point(127, 144)
         Me.TxtCell.Name = "TxtCell"
         Me.TxtCell.Size = New System.Drawing.Size(294, 20)
         Me.TxtCell.TabIndex = 7
         '
         'TxtTelefone
         '
-        Me.TxtTelefone.Location = New System.Drawing.Point(128, 144)
+        Me.TxtTelefone.Location = New System.Drawing.Point(127, 170)
         Me.TxtTelefone.Name = "TxtTelefone"
         Me.TxtTelefone.Size = New System.Drawing.Size(294, 20)
         Me.TxtTelefone.TabIndex = 8
         '
         'TxtEmail
         '
-        Me.TxtEmail.Location = New System.Drawing.Point(128, 170)
+        Me.TxtEmail.Location = New System.Drawing.Point(127, 196)
         Me.TxtEmail.Name = "TxtEmail"
         Me.TxtEmail.Size = New System.Drawing.Size(294, 20)
         Me.TxtEmail.TabIndex = 9
         '
         'ButtonNovo
         '
-        Me.ButtonNovo.Location = New System.Drawing.Point(439, 66)
+        Me.ButtonNovo.Location = New System.Drawing.Point(438, 92)
         Me.ButtonNovo.Name = "ButtonNovo"
         Me.ButtonNovo.Size = New System.Drawing.Size(101, 55)
         Me.ButtonNovo.TabIndex = 10
@@ -151,7 +155,7 @@ Partial Class Form1
         '
         'ButtonSalvar
         '
-        Me.ButtonSalvar.Location = New System.Drawing.Point(571, 66)
+        Me.ButtonSalvar.Location = New System.Drawing.Point(570, 92)
         Me.ButtonSalvar.Name = "ButtonSalvar"
         Me.ButtonSalvar.Size = New System.Drawing.Size(101, 55)
         Me.ButtonSalvar.TabIndex = 11
@@ -160,7 +164,7 @@ Partial Class Form1
         '
         'ButtonEdit
         '
-        Me.ButtonEdit.Location = New System.Drawing.Point(439, 135)
+        Me.ButtonEdit.Location = New System.Drawing.Point(438, 161)
         Me.ButtonEdit.Name = "ButtonEdit"
         Me.ButtonEdit.Size = New System.Drawing.Size(101, 55)
         Me.ButtonEdit.TabIndex = 12
@@ -169,27 +173,18 @@ Partial Class Form1
         '
         'ButtonDell
         '
-        Me.ButtonDell.Location = New System.Drawing.Point(571, 135)
+        Me.ButtonDell.Location = New System.Drawing.Point(570, 161)
         Me.ButtonDell.Name = "ButtonDell"
         Me.ButtonDell.Size = New System.Drawing.Size(101, 55)
         Me.ButtonDell.TabIndex = 13
         Me.ButtonDell.Text = "Deletar"
         Me.ButtonDell.UseVisualStyleBackColor = true
         '
-        'ButtonSair
-        '
-        Me.ButtonSair.Location = New System.Drawing.Point(29, 18)
-        Me.ButtonSair.Name = "ButtonSair"
-        Me.ButtonSair.Size = New System.Drawing.Size(80, 27)
-        Me.ButtonSair.TabIndex = 14
-        Me.ButtonSair.Text = "Sair"
-        Me.ButtonSair.UseVisualStyleBackColor = true
-        '
         'Label6
         '
         Me.Label6.AutoSize = true
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.Label6.Location = New System.Drawing.Point(223, 12)
+        Me.Label6.Location = New System.Drawing.Point(222, 38)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(177, 25)
         Me.Label6.TabIndex = 17
@@ -204,48 +199,11 @@ Partial Class Form1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.NomeDataGridViewTextBoxColumn, Me.EnderecoDataGridViewTextBoxColumn, Me.CelularDataGridViewTextBoxColumn, Me.TelefoneDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ContatosBindingSource1
-        Me.DataGridView1.Location = New System.Drawing.Point(29, 220)
+        Me.DataGridView1.Location = New System.Drawing.Point(28, 246)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = true
         Me.DataGridView1.Size = New System.Drawing.Size(643, 275)
         Me.DataGridView1.TabIndex = 18
-        '
-        'ContatosBindingSource1
-        '
-        Me.ContatosBindingSource1.DataMember = "contatos"
-        Me.ContatosBindingSource1.DataSource = Me.Database2DataSet1
-        '
-        'Database2DataSet1
-        '
-        Me.Database2DataSet1.DataSetName = "Database2DataSet1"
-        Me.Database2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ContatosBindingSource
-        '
-        Me.ContatosBindingSource.DataMember = "contatos"
-        Me.ContatosBindingSource.DataSource = Me.Database2DataSet
-        '
-        'Database2DataSet
-        '
-        Me.Database2DataSet.DataSetName = "Database2DataSet"
-        Me.Database2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ContatosTableAdapter
-        '
-        Me.ContatosTableAdapter.ClearBeforeFill = true
-        '
-        'ContatosTableAdapter1
-        '
-        Me.ContatosTableAdapter1.ClearBeforeFill = true
-        '
-        'ButtonLimparForm
-        '
-        Me.ButtonLimparForm.Location = New System.Drawing.Point(571, 18)
-        Me.ButtonLimparForm.Name = "ButtonLimparForm"
-        Me.ButtonLimparForm.Size = New System.Drawing.Size(101, 27)
-        Me.ButtonLimparForm.TabIndex = 19
-        Me.ButtonLimparForm.Text = "Limpar Formulario"
-        Me.ButtonLimparForm.UseVisualStyleBackColor = true
         '
         'IdDataGridViewTextBoxColumn
         '
@@ -289,16 +247,80 @@ Partial Class Form1
         Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
         Me.EmailDataGridViewTextBoxColumn.ReadOnly = true
         '
+        'ContatosBindingSource1
+        '
+        Me.ContatosBindingSource1.DataMember = "contatos"
+        Me.ContatosBindingSource1.DataSource = Me.Database2DataSet1
+        '
+        'Database2DataSet1
+        '
+        Me.Database2DataSet1.DataSetName = "Database2DataSet1"
+        Me.Database2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ContatosBindingSource
+        '
+        Me.ContatosBindingSource.DataMember = "contatos"
+        Me.ContatosBindingSource.DataSource = Me.Database2DataSet
+        '
+        'Database2DataSet
+        '
+        Me.Database2DataSet.DataSetName = "Database2DataSet"
+        Me.Database2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ContatosTableAdapter
+        '
+        Me.ContatosTableAdapter.ClearBeforeFill = true
+        '
+        'ContatosTableAdapter1
+        '
+        Me.ContatosTableAdapter1.ClearBeforeFill = true
+        '
+        'ButtonLimparForm
+        '
+        Me.ButtonLimparForm.Location = New System.Drawing.Point(570, 44)
+        Me.ButtonLimparForm.Name = "ButtonLimparForm"
+        Me.ButtonLimparForm.Size = New System.Drawing.Size(101, 27)
+        Me.ButtonLimparForm.TabIndex = 19
+        Me.ButtonLimparForm.Text = "Limpar Formulario"
+        Me.ButtonLimparForm.UseVisualStyleBackColor = true
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(699, 24)
+        Me.MenuStrip1.TabIndex = 20
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SairToolStripMenuItem, Me.ConfiguraçõesDBToolStripMenuItem})
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(59, 20)
+        Me.ToolStripMenuItem1.Text = "Opções"
+        '
+        'SairToolStripMenuItem
+        '
+        Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
+        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SairToolStripMenuItem.Text = "Sair"
+        '
+        'ConfiguraçõesDBToolStripMenuItem
+        '
+        Me.ConfiguraçõesDBToolStripMenuItem.Name = "ConfiguraçõesDBToolStripMenuItem"
+        Me.ConfiguraçõesDBToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ConfiguraçõesDBToolStripMenuItem.Text = "Configurações DB"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(699, 507)
+        Me.ClientSize = New System.Drawing.Size(699, 533)
         Me.Controls.Add(Me.ButtonLimparForm)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.ButtonSair)
         Me.Controls.Add(Me.ButtonDell)
         Me.Controls.Add(Me.ButtonEdit)
         Me.Controls.Add(Me.ButtonSalvar)
@@ -313,6 +335,8 @@ Partial Class Form1
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Agenda de Contatos"
@@ -321,6 +345,8 @@ Partial Class Form1
         CType(Me.Database2DataSet1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.ContatosBindingSource,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.Database2DataSet,System.ComponentModel.ISupportInitialize).EndInit
+        Me.MenuStrip1.ResumeLayout(false)
+        Me.MenuStrip1.PerformLayout
         Me.ResumeLayout(false)
         Me.PerformLayout
 
@@ -340,7 +366,6 @@ End Sub
     Friend WithEvents ButtonSalvar As Button
     Friend WithEvents ButtonEdit As Button
     Friend WithEvents ButtonDell As Button
-    Friend WithEvents ButtonSair As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Database2DataSet As Database2DataSet
@@ -356,4 +381,8 @@ End Sub
     Friend WithEvents CelularDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TelefoneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents SairToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ConfiguraçõesDBToolStripMenuItem As ToolStripMenuItem
 End Class

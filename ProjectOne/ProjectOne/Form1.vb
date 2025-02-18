@@ -116,11 +116,15 @@
         End If
     End Sub
 
-    Private Sub ButtonSair_Click(sender As Object, e As EventArgs) Handles ButtonSair.Click
+    Private Sub ButtonLimparForm_Click(sender As Object, e As EventArgs) Handles ButtonLimparForm.Click
+        LimparForm()
+    End Sub
+
+    Private Sub SairToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SairToolStripMenuItem.Click
         Application.Exit()
     End Sub
 
-    Private Sub ButtonLimparForm_Click(sender As Object, e As EventArgs) Handles ButtonLimparForm.Click
-        LimparForm()
+    Private Sub ConfiguraçõesDBToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfiguraçõesDBToolStripMenuItem.Click
+        ConfigDB.Activate()
     End Sub
 End Class
