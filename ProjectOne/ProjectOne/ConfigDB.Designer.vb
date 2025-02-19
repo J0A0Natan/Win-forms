@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ConfigDB
+Partial Class ChooseDB
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -26,6 +26,7 @@ Partial Class ConfigDB
         Me.BtnSelecionar = New System.Windows.Forms.Button()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.BtnConfig = New System.Windows.Forms.Button()
         Me.SuspendLayout
         '
         'Label1
@@ -69,18 +70,28 @@ Partial Class ConfigDB
         Me.RadioButton2.Text = "2 - SQL Server"
         Me.RadioButton2.UseVisualStyleBackColor = true
         '
-        'ConfigDB
+        'BtnConfig
+        '
+        Me.BtnConfig.Location = New System.Drawing.Point(113, 174)
+        Me.BtnConfig.Name = "BtnConfig"
+        Me.BtnConfig.Size = New System.Drawing.Size(121, 23)
+        Me.BtnConfig.TabIndex = 5
+        Me.BtnConfig.Text = "Configurar"
+        Me.BtnConfig.UseVisualStyleBackColor = true
+        '
+        'ChooseDB
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(356, 276)
+        Me.Controls.Add(Me.BtnConfig)
         Me.Controls.Add(Me.RadioButton2)
         Me.Controls.Add(Me.RadioButton1)
         Me.Controls.Add(Me.BtnSelecionar)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "ConfigDB"
+        Me.Name = "ChooseDB"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "ConfigDB"
+        Me.Text = "Escolha de banco de dados"
         Me.ResumeLayout(false)
         Me.PerformLayout
 
@@ -89,4 +100,5 @@ End Sub
     Friend WithEvents BtnSelecionar As Button
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents BtnConfig As Button
 End Class

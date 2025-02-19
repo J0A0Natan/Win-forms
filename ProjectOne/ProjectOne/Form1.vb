@@ -126,6 +126,6 @@
     End Sub
 
     Private Sub ConfiguraçõesDBToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfiguraçõesDBToolStripMenuItem.Click
-        ConfigDB.ShowDialog()
+        ChooseDB.ShowDialog()
     End Sub
 End Class

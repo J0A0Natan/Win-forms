@@ -1,4 +1,4 @@
-﻿Public Class ConfigDB
+﻿Public Class ChooseDB
     Private Sub BtnSelecionar_Click(sender As Object, e As EventArgs) Handles BtnSelecionar.Click
         Dim escolha As Integer
         If RadioButton1.Checked = True Then
