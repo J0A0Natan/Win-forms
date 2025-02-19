@@ -125,7 +125,7 @@
         Application.Exit()
     End Sub
 
-    Private Sub ConfiguraçõesDBToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfiguraçõesDBToolStripMenuItem.Click
+    Private Sub ConfiguraçõesDBToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         ChooseDB.ShowDialog()
     End Sub
 End Class

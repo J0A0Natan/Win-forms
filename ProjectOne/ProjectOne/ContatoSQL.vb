@@ -16,7 +16,7 @@ Public Class ContatoSQL
         '    conn.Open()
         '    MsgBox("SQL: Conexão efetuada com sucesso!" & vbNewLine, vbInformation)
         'Catch ex As Exception
-        '    MsgBox("SQL: Não Conectou!" & vbNewLine & ex.Message, vbCritical)  
+        '    MsgBox("SQL: Não Conectou!" & vbNewLine & ex.Message, vbCritical)
         'End Try
     End Sub
 

@@ -55,7 +55,6 @@ Partial Class Form1
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConfiguraçõesDBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ContatosBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Database2DataSet1,System.ComponentModel.ISupportInitialize).BeginInit
@@ -295,7 +294,7 @@ Partial Class Form1
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SairToolStripMenuItem, Me.ConfiguraçõesDBToolStripMenuItem})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SairToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(59, 20)
         Me.ToolStripMenuItem1.Text = "Opções"
@@ -305,12 +304,6 @@ Partial Class Form1
         Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
         Me.SairToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SairToolStripMenuItem.Text = "Sair"
-        '
-        'ConfiguraçõesDBToolStripMenuItem
-        '
-        Me.ConfiguraçõesDBToolStripMenuItem.Name = "ConfiguraçõesDBToolStripMenuItem"
-        Me.ConfiguraçõesDBToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ConfiguraçõesDBToolStripMenuItem.Text = "Configurações DB"
         '
         'Form1
         '
@@ -384,5 +377,4 @@ End Sub
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents SairToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ConfiguraçõesDBToolStripMenuItem As ToolStripMenuItem
 End Class
