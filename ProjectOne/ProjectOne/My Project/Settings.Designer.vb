@@ -123,6 +123,18 @@ Namespace My
                 Me("SenhaSQL") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property CaminhoAcsses() As String
+            Get
+                Return CType(Me("CaminhoAcsses"),String)
+            End Get
+            Set
+                Me("CaminhoAcsses") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

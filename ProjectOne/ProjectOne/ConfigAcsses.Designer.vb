@@ -22,10 +22,13 @@ Partial Class ConfigAcsses
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ConfigAcsses))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtAcsses = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.BtnVoltar = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.BtnSelecionar = New System.Windows.Forms.Button()
         Me.SuspendLayout
         '
         'Label1
@@ -45,14 +48,14 @@ Partial Class ConfigAcsses
         Me.TxtAcsses.Size = New System.Drawing.Size(261, 20)
         Me.TxtAcsses.TabIndex = 1
         '
-        'Button1
+        'BtnSalvar
         '
-        Me.Button1.Location = New System.Drawing.Point(151, 113)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Salvar"
-        Me.Button1.UseVisualStyleBackColor = true
+        Me.BtnSalvar.Location = New System.Drawing.Point(151, 113)
+        Me.BtnSalvar.Name = "BtnSalvar"
+        Me.BtnSalvar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnSalvar.TabIndex = 2
+        Me.BtnSalvar.Text = "Salvar"
+        Me.BtnSalvar.UseVisualStyleBackColor = true
         '
         'BtnVoltar
         '
@@ -63,13 +66,30 @@ Partial Class ConfigAcsses
         Me.BtnVoltar.Text = "Voltar"
         Me.BtnVoltar.UseVisualStyleBackColor = true
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'BtnSelecionar
+        '
+        Me.BtnSelecionar.FlatAppearance.BorderSize = 0
+        Me.BtnSelecionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSelecionar.Image = CType(resources.GetObject("BtnSelecionar.Image"),System.Drawing.Image)
+        Me.BtnSelecionar.Location = New System.Drawing.Point(328, 87)
+        Me.BtnSelecionar.Name = "BtnSelecionar"
+        Me.BtnSelecionar.Size = New System.Drawing.Size(20, 20)
+        Me.BtnSelecionar.TabIndex = 4
+        Me.BtnSelecionar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.BtnSelecionar.UseVisualStyleBackColor = true
+        '
         'ConfigAcsses
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(387, 204)
+        Me.Controls.Add(Me.BtnSelecionar)
         Me.Controls.Add(Me.BtnVoltar)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.BtnSalvar)
         Me.Controls.Add(Me.TxtAcsses)
         Me.Controls.Add(Me.Label1)
         Me.Name = "ConfigAcsses"
@@ -82,6 +102,8 @@ End Sub
 
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtAcsses As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnSalvar As Button
     Friend WithEvents BtnVoltar As Button
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents BtnSelecionar As Button
 End Class

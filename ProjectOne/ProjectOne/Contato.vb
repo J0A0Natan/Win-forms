@@ -6,12 +6,17 @@ Public Class Contato
     Private comando As OleDbCommand
     Private da As OleDbDataAdapter
     Private dr As OleDbDataReader
-    Public Shared pathAcsses As String = "T:\WinForms\Database\Database2.mdb"
+    Public Shared pathAcsses As String = My.Settings.CaminhoAcsses
 
     'Construtor
     Sub New()
-        'conn = New OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0; Data Source=T:\WinForms\Database\Database2.mdb")
-        conn = New OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0; Data Source=" & pathAcsses)
+        Try
+            conn = New OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0; Data Source=" & pathAcsses)
+            conn.Open()
+            conn.Close()
+        Catch ex As Exception
+            MsgBox("Erro ao conectar com o banco de dados. " & ex.Message)
+        End Try
     End Sub
 
     Public Property Id As Integer
@@ -89,7 +94,7 @@ Public Class Contato
             Return tabela
 
         Catch ex As Exception
-            Throw ex
+            MsgBox("Erro ao conectar com o banco de dados! " & ex.Message)
         End Try
     End Function
 

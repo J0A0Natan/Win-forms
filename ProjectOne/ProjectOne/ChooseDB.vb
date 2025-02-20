@@ -7,10 +7,18 @@
             escolha = 2
         End If
 
+        If My.Settings.CaminhoAcsses = "" And escolha = 1
+            MsgBox("Configure o acesso antes!", vbExclamation, "Atenção")
+        Else If My.Settings.ServidorSQL = "" And escolha = 2
+            MsgBox("Configure a conexão com o banco antes!", vbExclamation, "Atenção")
+        Else
+            Form1.tipoConFormNum = escolha
+            Me.Hide()
+            Form1.Show()
+        End If
+
         'MessageBox.Show("Opção selecionada: " & escolha)
-        Form1.tipoConFormNum = escolha
-        Me.Hide()
-        Form1.Show()
+        
     End Sub
 
     Private Sub ConfigDB_Load(sender As Object, e As EventArgs) Handles MyBase.Load
