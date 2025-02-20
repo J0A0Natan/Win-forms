@@ -75,6 +75,54 @@ Namespace My
                 Return CType(Me("Database2ConnectionString1"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ServidorSQL() As String
+            Get
+                Return CType(Me("ServidorSQL"),String)
+            End Get
+            Set
+                Me("ServidorSQL") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property BancoDeDados() As String
+            Get
+                Return CType(Me("BancoDeDados"),String)
+            End Get
+            Set
+                Me("BancoDeDados") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property UsuarioSQL() As String
+            Get
+                Return CType(Me("UsuarioSQL"),String)
+            End Get
+            Set
+                Me("UsuarioSQL") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property SenhaSQL() As String
+            Get
+                Return CType(Me("SenhaSQL"),String)
+            End Get
+            Set
+                Me("SenhaSQL") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

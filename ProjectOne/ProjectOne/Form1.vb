@@ -90,8 +90,10 @@
         If TxtNome.Text = "" Or TxtEnd.Text = "" Or TxtCell.Text = "" Or TxtEmail.Text = ""
             MessageBox.Show("Preencha todos os campos necessarios!", "Atenção")
         Else
+            Dim nome As String'
+            nome = DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(1).Value
             Dim resultado As DialogResult
-            resultado = MessageBox.Show("Tem certeza que deseja alterar esse contato?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            resultado = MessageBox.Show("Tem certeza que deseja alterar o contato " & nome & "?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
             If resultado = DialogResult.Yes Then
                 Dim id As Integer
@@ -104,11 +106,11 @@
                 objContato.Email = TxtEmail.Text
                 Try
                     If objContato.AtualizarContato() = True Then
-                        MsgBox("Contato editado com sucesso!", vbInformation)
+                        MsgBox("Contato alterado com sucesso!", vbInformation)
                         CarregarGrid()
                         LimparForm()
                     Else
-                        MsgBox("ERRO: Contato não editado com sucesso!", vbObjectError)
+                        MsgBox("ERRO: Contato não alterado com sucesso!", vbObjectError)
                     End If
                 Catch ex As Exception
                     MessageBox.Show(ex.Message)

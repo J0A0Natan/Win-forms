@@ -6,10 +6,12 @@ Public Class Contato
     Private comando As OleDbCommand
     Private da As OleDbDataAdapter
     Private dr As OleDbDataReader
+    Public Shared pathAcsses As String = "T:\WinForms\Database\Database2.mdb"
 
     'Construtor
     Sub New()
-        conn = New OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0; Data Source=T:\WinForms\Database\Database2.mdb")
+        'conn = New OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0; Data Source=T:\WinForms\Database\Database2.mdb")
+        conn = New OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0; Data Source=" & pathAcsses)
     End Sub
 
     Public Property Id As Integer

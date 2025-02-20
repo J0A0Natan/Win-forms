@@ -19,9 +19,10 @@
 
     Private Sub BtnConfig_Click(sender As Object, e As EventArgs) Handles BtnConfig.Click
         If RadioButton1.Checked = True Then
-            
+            ConfigAcsses.Show()
+            Me.Hide()
         ElseIf RadioButton2.Checked = True Then
-            ConfigSQLServer.ShowDialog()
+            ConfigSQLServer.Show()
             Me.Hide()
         End If
     End Sub

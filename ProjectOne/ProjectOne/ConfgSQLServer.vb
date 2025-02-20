@@ -1,17 +1,43 @@
-﻿Public Class ConfigSQLServer
-    Private conn As New SQL
-    Private Sub BtnTestar_Click(sender As Object, e As EventArgs) Handles BtnTestar.Click
-        conn.server = TxtServer.Text.ToString
-        conn.dataBase = TxtDB.Text.ToString
-        conn.user = TxtUser.Text.ToString
-        conn.pass = TxtPass.Text.ToString
+﻿Imports System.Data.SqlClient
 
-        conn.connectDb()
+Public Class ConfigSQLServer
+    Private conn As SqlConnection
+
+    Private Sub BtnTestar_Click(sender As Object, e As EventArgs) Handles BtnTestar.Click
+        If TxtServer.Text = "" Or TxtDB.Text = "" Or TxtUser.Text = ""
+            MsgBox("Preencha todos os campos necessarios!", vbExclamation)
+        Else
+            Dim strCon = $"Data Source={TxtServer.Text}; Integrated Security=False; Initial Catalog={TxtDB.Text}; User={TxtUser.Text}; Password={TxtPass.Text}"
+
+            Try
+                Using conn = New SqlConnection(strCon)
+                    conn.Open()
+                    MsgBox("SQL: Conexão efetuada com sucesso!" & vbNewLine, vbInformation)
+                End Using
+            Catch ex As Exception
+                MsgBox("Não Conectou!" & vbNewLine & ex.Message, vbCritical)
+            End Try
+        End If
     End Sub
 
     Private Sub BtnSalvar_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
-        Form1.tipoConFormNum = 2
+        My.Settings.ServidorSQL = TxtServer.Text
+        My.Settings.BancoDeDados = TxtDB.Text
+        My.Settings.UsuarioSQL = TxtUser.Text
+        My.Settings.SenhaSQL = TxtPass.Text
         Me.Hide()
-        Form1.Show()
+        ChooseDB.Show()
+    End Sub
+
+    Private Sub BtnVoltar_Click(sender As Object, e As EventArgs) Handles BtnVoltar.Click
+        Me.Close()
+        ChooseDB.Show()
+    End Sub
+
+    Private Sub ConfigSQLServer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TxtServer.Text = My.Settings.ServidorSQL
+        TxtDB.Text = My.Settings.BancoDeDados
+        TxtUser.Text = My.Settings.UsuarioSQL
+        'TxtPass.Text = My.Settings.SenhaSQL
     End Sub
 End Class

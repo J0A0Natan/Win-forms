@@ -24,3 +24,4 @@ T:\WinForms\ProjectOne\ProjectOne\obj\Debug\ProjectOne.pdb
 T:\WinForms\ProjectOne\ProjectOne\obj\Debug\ProjectOne.ChooseDB.resources
 T:\WinForms\ProjectOne\ProjectOne\obj\Debug\ProjectOne.ConfigSQLServer.resources
 T:\WinForms\ProjectOne\ProjectOne\obj\Debug\ProjectOne.vbproj.AssemblyReference.cache
+T:\WinForms\ProjectOne\ProjectOne\obj\Debug\ProjectOne.ConfigAcsses.resources

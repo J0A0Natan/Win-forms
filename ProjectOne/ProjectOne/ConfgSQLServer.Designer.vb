@@ -32,6 +32,7 @@ Partial Class ConfigSQLServer
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.BtnTestar = New System.Windows.Forms.Button()
+        Me.BtnVoltar = New System.Windows.Forms.Button()
         Me.SuspendLayout
         '
         'TxtServer
@@ -59,6 +60,7 @@ Partial Class ConfigSQLServer
         '
         Me.TxtPass.Location = New System.Drawing.Point(128, 106)
         Me.TxtPass.Name = "TxtPass"
+        Me.TxtPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtPass.Size = New System.Drawing.Size(266, 20)
         Me.TxtPass.TabIndex = 3
         '
@@ -104,27 +106,37 @@ Partial Class ConfigSQLServer
         '
         'BtnSalvar
         '
-        Me.BtnSalvar.Location = New System.Drawing.Point(256, 186)
+        Me.BtnSalvar.Location = New System.Drawing.Point(300, 186)
         Me.BtnSalvar.Name = "BtnSalvar"
-        Me.BtnSalvar.Size = New System.Drawing.Size(138, 24)
+        Me.BtnSalvar.Size = New System.Drawing.Size(94, 24)
         Me.BtnSalvar.TabIndex = 8
         Me.BtnSalvar.Text = "Salvar"
         Me.BtnSalvar.UseVisualStyleBackColor = true
         '
         'BtnTestar
         '
-        Me.BtnTestar.Location = New System.Drawing.Point(40, 186)
+        Me.BtnTestar.Location = New System.Drawing.Point(168, 186)
         Me.BtnTestar.Name = "BtnTestar"
-        Me.BtnTestar.Size = New System.Drawing.Size(138, 24)
+        Me.BtnTestar.Size = New System.Drawing.Size(94, 24)
         Me.BtnTestar.TabIndex = 9
         Me.BtnTestar.Text = "Testar Conexão"
         Me.BtnTestar.UseVisualStyleBackColor = true
+        '
+        'BtnVoltar
+        '
+        Me.BtnVoltar.Location = New System.Drawing.Point(39, 186)
+        Me.BtnVoltar.Name = "BtnVoltar"
+        Me.BtnVoltar.Size = New System.Drawing.Size(94, 24)
+        Me.BtnVoltar.TabIndex = 10
+        Me.BtnVoltar.Text = "Voltar"
+        Me.BtnVoltar.UseVisualStyleBackColor = true
         '
         'ConfigSQLServer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(444, 250)
+        Me.ClientSize = New System.Drawing.Size(440, 250)
+        Me.Controls.Add(Me.BtnVoltar)
         Me.Controls.Add(Me.BtnTestar)
         Me.Controls.Add(Me.BtnSalvar)
         Me.Controls.Add(Me.Label4)
@@ -153,4 +165,5 @@ End Sub
     Friend WithEvents Label4 As Label
     Friend WithEvents BtnSalvar As Button
     Friend WithEvents BtnTestar As Button
+    Friend WithEvents BtnVoltar As Button
 End Class
