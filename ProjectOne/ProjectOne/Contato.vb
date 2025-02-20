@@ -94,7 +94,8 @@ Public Class Contato
             Return tabela
 
         Catch ex As Exception
-            MsgBox("Erro ao conectar com o banco de dados! " & ex.Message)
+            'MsgBox("Erro ao conectar com o banco de dados! " & ex.Message)
+            Throw ex
         End Try
     End Function
 
