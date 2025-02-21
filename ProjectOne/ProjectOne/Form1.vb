@@ -60,11 +60,11 @@
         dados = objContato.ListarContatoEditar(id)
 
         'MessageBox.Show(dados(0).ToString)
-        TxtNome.Text = dados(1).ToString
-        TxtEnd.Text = dados(2).ToString
-        TxtCell.Text = dados(3).ToString
-        TxtTelefone.Text = dados(4).ToString
-        TxtEmail.Text = dados(5).ToString
+        TxtNome.Text = dados(0)
+        TxtEnd.Text = dados(1)
+        TxtCell.Text = dados(2)
+        TxtTelefone.Text = dados(3)
+        TxtEmail.Text = dados(4)
 
     End Sub
 

@@ -5,7 +5,7 @@ Public Class ConfigSQLServer
 
     Private Sub BtnTestar_Click(sender As Object, e As EventArgs) Handles BtnTestar.Click
         If TxtServer.Text = "" Or TxtDB.Text = "" Or TxtUser.Text = ""
-            MsgBox("Preencha todos os campos necessarios!", vbExclamation)
+            MsgBox("Preencha todos os campos necessarios!", vbExclamation, "Atenção")
         Else
             Dim strCon = $"Data Source={TxtServer.Text}; Integrated Security=False; Initial Catalog={TxtDB.Text}; User={TxtUser.Text}; Password={TxtPass.Text}"
 

@@ -104,11 +104,11 @@ Public Class ContatoSQL
                         cmd.Parameters.AddWithValue("@id", idCont)
                         dr = cmd.ExecuteReader()
                         dr.Read()
-                        dados(1) = dr("nome")
-                        dados(2) = dr("endereco")
-                        dados(3) = dr("celular")
-                        dados(4) = dr("telefone")
-                        dados(5) = dr("email")
+                        dados(0) = dr("nome").ToString()
+                        dados(1) = dr("endereco").ToString()
+                        dados(2) = dr("celular").ToString()
+                        dados(3) = dr("telefone").ToString()
+                        dados(4) = dr("email").ToString()
                         Return dados
                     End Using
             End Using

@@ -113,11 +113,11 @@ Public Class Contato
             conn.Open()
             dr = comando.ExecuteReader()
             dr.Read()
-            dados(1) = dr("nome").ToString
-            dados(2) = dr("endereco").ToString
-            dados(3) = dr("celular").ToString
-            dados(4) = dr("telefone").ToString
-            dados(5) = dr("email").ToString
+            dados(0) = dr("nome").ToString()
+            dados(1) = dr("endereco").ToString()
+            dados(2) = dr("celular").ToString()
+            dados(3) = dr("telefone").ToString()
+            dados(4) = dr("email").ToString()
             conn.Close()
 
             Return dados
