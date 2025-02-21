@@ -15,7 +15,7 @@ Public Class ConfigSQLServer
                     MsgBox("SQL: Conexão efetuada com sucesso!" & vbNewLine, vbInformation)
                 End Using
             Catch ex As Exception
-                MsgBox("Não Conectou!" & vbNewLine & ex.Message, vbCritical)
+                MsgBox("Falha ao conectar com o banco de dados!" & vbNewLine & ex.Message, vbCritical)
             End Try
         End If
     End Sub
@@ -25,7 +25,7 @@ Public Class ConfigSQLServer
         My.Settings.BancoDeDados = TxtDB.Text
         My.Settings.UsuarioSQL = TxtUser.Text
         My.Settings.SenhaSQL = TxtPass.Text
-        Me.Hide()
+        Me.Close()
         ChooseDB.Show()
     End Sub
 

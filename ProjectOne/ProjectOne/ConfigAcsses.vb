@@ -14,7 +14,7 @@
         Dim openFile As New OpenFileDialog()
         openFile.Title = "Selecione um arquivo "
         openFile.Filter = "Arquivos Access (*.mdb;*.accdb)|*.mdb;*.accdb|Todos os Arquivos (*.*)|*.*"
-        openFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
+        'openFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
 
         If openFile.ShowDialog() = DialogResult.OK Then
             TxtAcsses.Text = openFile.FileName

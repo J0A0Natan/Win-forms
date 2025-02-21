@@ -70,7 +70,9 @@
 
     Private Sub ButtonDell_Click(sender As Object, e As EventArgs) Handles ButtonDell.Click
         Dim resultado As DialogResult
-        resultado = MessageBox.Show("Tem certeza que deseja excluir esse contato?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Dim nome As String
+        nome = DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(1).Value
+        resultado = MessageBox.Show("Tem certeza que deseja excluir o contato " & nome & "?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If resultado = DialogResult.Yes Then
             Dim id As Integer
@@ -80,7 +82,7 @@
                 MessageBox.Show("Contato deletado com sucesso!")
                 CarregarGrid()
              Else
-                MessageBox.Show("ERRO: Contato não deletado com sucesso!")
+                MessageBox.Show("ERRO: Contato não deletado!")
             End If
         End If
         
@@ -90,7 +92,7 @@
         If TxtNome.Text = "" Or TxtEnd.Text = "" Or TxtCell.Text = "" Or TxtEmail.Text = ""
             MessageBox.Show("Preencha todos os campos necessarios!", "Atenção")
         Else
-            Dim nome As String'
+            Dim nome As String
             nome = DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(1).Value
             Dim resultado As DialogResult
             resultado = MessageBox.Show("Tem certeza que deseja alterar o contato " & nome & "?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
