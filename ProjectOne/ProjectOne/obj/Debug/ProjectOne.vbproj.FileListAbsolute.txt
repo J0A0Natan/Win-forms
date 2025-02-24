@@ -42,3 +42,7 @@ T:\WinForms\ProjectOne\ProjectOne\bin\Debug\CrystalDecisions.ReportAppServer.Obj
 T:\WinForms\ProjectOne\ProjectOne\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 T:\WinForms\ProjectOne\ProjectOne\bin\Debug\stdole.dll
 T:\WinForms\ProjectOne\ProjectOne\obj\Debug\ProjectOne.vbproj.CopyComplete
+T:\WinForms\ProjectOne\ProjectOne\bin\Debug\AxShockwaveFlashObjects.dll
+T:\WinForms\ProjectOne\ProjectOne\bin\Debug\CrystalDecisions.Windows.Forms.dll
+T:\WinForms\ProjectOne\ProjectOne\bin\Debug\ShockwaveFlashObjects.dll
+T:\WinForms\ProjectOne\ProjectOne\obj\Debug\ProjectOne.Relatorio.resources

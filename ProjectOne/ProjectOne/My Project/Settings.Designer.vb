@@ -57,17 +57,6 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=""T:\Aplicação Windows Forms VB.NET\D"& _ 
-            "atabase\Database2.mdb""")>  _
-        Public ReadOnly Property Database2ConnectionString() As String
-            Get
-                Return CType(Me("Database2ConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\WinForms\Database\Database2.mdb;U"& _ 
             "ser ID=admin")>  _
         Public ReadOnly Property Database2ConnectionString1() As String
@@ -134,6 +123,17 @@ Namespace My
             Set
                 Me("CaminhoAcsses") = value
             End Set
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=""T:\Aplicação Windows Forms VB.NET\D"& _ 
+            "atabase\Database2.mdb""")>  _
+        Public ReadOnly Property Database2ConnectionString() As String
+            Get
+                Return CType(Me("Database2ConnectionString"),String)
+            End Get
         End Property
     End Class
 End Namespace

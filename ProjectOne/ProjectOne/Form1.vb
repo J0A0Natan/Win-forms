@@ -16,7 +16,6 @@
     End Sub
 
     Private Function CarregarGrid()
-        
         Dim tabela As DataTable = objContato.ListarContato()
         DataGridView1.DataSource = tabela
     End Function
@@ -131,5 +130,9 @@
 
     Private Sub ConfiguraçõesDBToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         ChooseDB.ShowDialog()
+    End Sub
+
+    Private Sub RelatorioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RelatorioToolStripMenuItem.Click
+        Relatorio.ShowDialog()
     End Sub
 End Class

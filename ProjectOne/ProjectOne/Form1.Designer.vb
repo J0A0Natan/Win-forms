@@ -39,12 +39,6 @@ Partial Class Form1
         Me.ButtonDell = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NomeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EnderecoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CelularDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TelefoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ContatosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.Database2DataSet1 = New ProjectOne.Database2DataSet1()
         Me.ContatosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -55,6 +49,7 @@ Partial Class Form1
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RelatorioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ContatosBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Database2DataSet1,System.ComponentModel.ISupportInitialize).BeginInit
@@ -193,58 +188,13 @@ Partial Class Form1
         '
         Me.DataGridView1.AllowUserToAddRows = false
         Me.DataGridView1.AllowUserToDeleteRows = false
-        Me.DataGridView1.AutoGenerateColumns = false
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.NomeDataGridViewTextBoxColumn, Me.EnderecoDataGridViewTextBoxColumn, Me.CelularDataGridViewTextBoxColumn, Me.TelefoneDataGridViewTextBoxColumn, Me.EmailDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.ContatosBindingSource1
         Me.DataGridView1.Location = New System.Drawing.Point(28, 246)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = true
         Me.DataGridView1.Size = New System.Drawing.Size(643, 275)
         Me.DataGridView1.TabIndex = 18
-        '
-        'IdDataGridViewTextBoxColumn
-        '
-        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "id"
-        Me.IdDataGridViewTextBoxColumn.HeaderText = "id"
-        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
-        Me.IdDataGridViewTextBoxColumn.ReadOnly = true
-        '
-        'NomeDataGridViewTextBoxColumn
-        '
-        Me.NomeDataGridViewTextBoxColumn.DataPropertyName = "nome"
-        Me.NomeDataGridViewTextBoxColumn.HeaderText = "nome"
-        Me.NomeDataGridViewTextBoxColumn.Name = "NomeDataGridViewTextBoxColumn"
-        Me.NomeDataGridViewTextBoxColumn.ReadOnly = true
-        '
-        'EnderecoDataGridViewTextBoxColumn
-        '
-        Me.EnderecoDataGridViewTextBoxColumn.DataPropertyName = "endereco"
-        Me.EnderecoDataGridViewTextBoxColumn.HeaderText = "endereco"
-        Me.EnderecoDataGridViewTextBoxColumn.Name = "EnderecoDataGridViewTextBoxColumn"
-        Me.EnderecoDataGridViewTextBoxColumn.ReadOnly = true
-        '
-        'CelularDataGridViewTextBoxColumn
-        '
-        Me.CelularDataGridViewTextBoxColumn.DataPropertyName = "celular"
-        Me.CelularDataGridViewTextBoxColumn.HeaderText = "celular"
-        Me.CelularDataGridViewTextBoxColumn.Name = "CelularDataGridViewTextBoxColumn"
-        Me.CelularDataGridViewTextBoxColumn.ReadOnly = true
-        '
-        'TelefoneDataGridViewTextBoxColumn
-        '
-        Me.TelefoneDataGridViewTextBoxColumn.DataPropertyName = "telefone"
-        Me.TelefoneDataGridViewTextBoxColumn.HeaderText = "telefone"
-        Me.TelefoneDataGridViewTextBoxColumn.Name = "TelefoneDataGridViewTextBoxColumn"
-        Me.TelefoneDataGridViewTextBoxColumn.ReadOnly = true
-        '
-        'EmailDataGridViewTextBoxColumn
-        '
-        Me.EmailDataGridViewTextBoxColumn.DataPropertyName = "email"
-        Me.EmailDataGridViewTextBoxColumn.HeaderText = "email"
-        Me.EmailDataGridViewTextBoxColumn.Name = "EmailDataGridViewTextBoxColumn"
-        Me.EmailDataGridViewTextBoxColumn.ReadOnly = true
         '
         'ContatosBindingSource1
         '
@@ -294,7 +244,7 @@ Partial Class Form1
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SairToolStripMenuItem})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SairToolStripMenuItem, Me.RelatorioToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(59, 20)
         Me.ToolStripMenuItem1.Text = "Opções"
@@ -304,6 +254,12 @@ Partial Class Form1
         Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
         Me.SairToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SairToolStripMenuItem.Text = "Sair"
+        '
+        'RelatorioToolStripMenuItem
+        '
+        Me.RelatorioToolStripMenuItem.Name = "RelatorioToolStripMenuItem"
+        Me.RelatorioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RelatorioToolStripMenuItem.Text = "Relatorio"
         '
         'Form1
         '
@@ -368,13 +324,8 @@ End Sub
     Friend WithEvents ContatosBindingSource1 As BindingSource
     Friend WithEvents ContatosTableAdapter1 As Database2DataSet1TableAdapters.contatosTableAdapter
     Friend WithEvents ButtonLimparForm As Button
-    Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NomeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EnderecoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CelularDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents TelefoneDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents SairToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RelatorioToolStripMenuItem As ToolStripMenuItem
 End Class
