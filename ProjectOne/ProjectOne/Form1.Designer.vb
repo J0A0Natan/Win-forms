@@ -40,9 +40,7 @@ Partial Class Form1
         Me.Label6 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ContatosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Database2DataSet1 = New ProjectOne.Database2DataSet1()
         Me.ContatosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Database2DataSet = New ProjectOne.Database2DataSet()
         Me.ContatosTableAdapter = New ProjectOne.Database2DataSetTableAdapters.contatosTableAdapter()
         Me.ContatosTableAdapter1 = New ProjectOne.Database2DataSet1TableAdapters.contatosTableAdapter()
         Me.ButtonLimparForm = New System.Windows.Forms.Button()
@@ -52,9 +50,7 @@ Partial Class Form1
         Me.RelatorioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ContatosBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.Database2DataSet1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ContatosBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.Database2DataSet,System.ComponentModel.ISupportInitialize).BeginInit
         Me.MenuStrip1.SuspendLayout
         Me.SuspendLayout
         '
@@ -196,26 +192,6 @@ Partial Class Form1
         Me.DataGridView1.Size = New System.Drawing.Size(643, 275)
         Me.DataGridView1.TabIndex = 18
         '
-        'ContatosBindingSource1
-        '
-        Me.ContatosBindingSource1.DataMember = "contatos"
-        Me.ContatosBindingSource1.DataSource = Me.Database2DataSet1
-        '
-        'Database2DataSet1
-        '
-        Me.Database2DataSet1.DataSetName = "Database2DataSet1"
-        Me.Database2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ContatosBindingSource
-        '
-        Me.ContatosBindingSource.DataMember = "contatos"
-        Me.ContatosBindingSource.DataSource = Me.Database2DataSet
-        '
-        'Database2DataSet
-        '
-        Me.Database2DataSet.DataSetName = "Database2DataSet"
-        Me.Database2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'ContatosTableAdapter
         '
         Me.ContatosTableAdapter.ClearBeforeFill = true
@@ -252,13 +228,13 @@ Partial Class Form1
         'SairToolStripMenuItem
         '
         Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
-        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
         Me.SairToolStripMenuItem.Text = "Sair"
         '
         'RelatorioToolStripMenuItem
         '
         Me.RelatorioToolStripMenuItem.Name = "RelatorioToolStripMenuItem"
-        Me.RelatorioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RelatorioToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
         Me.RelatorioToolStripMenuItem.Text = "Relatorio"
         '
         'Form1
@@ -291,9 +267,7 @@ Partial Class Form1
         Me.Text = "Agenda de Contatos"
         CType(Me.DataGridView1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.ContatosBindingSource1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.Database2DataSet1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.ContatosBindingSource,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.Database2DataSet,System.ComponentModel.ISupportInitialize).EndInit
         Me.MenuStrip1.ResumeLayout(false)
         Me.MenuStrip1.PerformLayout
         Me.ResumeLayout(false)
@@ -317,10 +291,8 @@ End Sub
     Friend WithEvents ButtonDell As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Database2DataSet As Database2DataSet
     Friend WithEvents ContatosBindingSource As BindingSource
     Friend WithEvents ContatosTableAdapter As Database2DataSetTableAdapters.contatosTableAdapter
-    Friend WithEvents Database2DataSet1 As Database2DataSet1
     Friend WithEvents ContatosBindingSource1 As BindingSource
     Friend WithEvents ContatosTableAdapter1 As Database2DataSet1TableAdapters.contatosTableAdapter
     Friend WithEvents ButtonLimparForm As Button
