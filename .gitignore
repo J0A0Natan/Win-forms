@@ -1,6 +1,7 @@
-ProjectOne\ProjectOne\bin
+bin/
 
-ProjectOne\ProjectOne\obj
+obj/
 
 *.suo
 
+.vs
