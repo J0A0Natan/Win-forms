@@ -15,10 +15,7 @@
             Form1.tipoConFormNum = escolha
             Me.Hide()
             Form1.Show()
-        End If
-
-        'MessageBox.Show("Opção selecionada: " & escolha)
-        
+        End If        
     End Sub
 
     Private Sub ConfigDB_Load(sender As Object, e As EventArgs) Handles MyBase.Load
