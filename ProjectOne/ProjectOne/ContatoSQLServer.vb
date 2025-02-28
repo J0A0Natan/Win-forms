@@ -1,34 +1,14 @@
 ﻿Imports System.Data.SqlClient
 
-Public Class ContatoSQL
+Public Class ContatoSQLServer: Inherits IContato
     'Atributos
     Private sql As New SQL
-    Private conn As SqlConnection
     Private da As SqlDataAdapter
-    Private dt As New DataTable
     Private dr As SqlDataReader
     Private cmd As SqlCommand
 
-    'Construtor
-    Sub New()
-        'Try
-        '    conn = New SqlConnection(sql.strCon)
-        '    conn.Open()
-        '    MsgBox("SQL: Conexão efetuada com sucesso!" & vbNewLine, vbInformation)
-        'Catch ex As Exception
-        '    MsgBox("SQL: Não Conectou!" & vbNewLine & ex.Message, vbCritical)
-        'End Try
-    End Sub
-
-    Public Property Id As Integer
-    Public Property Nome As String
-    Public Property Endereco As String
-    Public Property Celular As String
-    Public Property Telefone As String
-    Public Property Email As String
-
     'Metodos
-    Public Function NovoContato() As Boolean
+    Public Overrides Function NovoContato() As Boolean
         Dim retorno As Boolean
         Dim query As String
 
@@ -51,7 +31,7 @@ Public Class ContatoSQL
         Return retorno
     End Function
 
-    Public Function AtualizarContato() As Boolean
+    Public Overrides Function AtualizarContato() As Boolean
         Dim retorno As Boolean
         Dim query As String
 
@@ -75,7 +55,7 @@ Public Class ContatoSQL
         End Try
     End Function
 
-    Public Function ListarContato() As DataTable
+    Public Overrides Function ListarContato() As DataTable
         Dim query As String
         Dim tabela As New DataTable
 
@@ -92,7 +72,7 @@ Public Class ContatoSQL
         End Try
     End Function
 
-    Public Function ListarContatoEditar(idCont As Integer)
+    Public Overrides Function ListarContatoEditar(idCont As Integer) As Array
         Dim query As String
         Dim dados(5) As String
 
@@ -109,16 +89,17 @@ Public Class ContatoSQL
                         dados(2) = dr("celular").ToString()
                         dados(3) = dr("telefone").ToString()
                         dados(4) = dr("email").ToString()
-                        Return dados
                     End Using
             End Using
         
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+
+        Return dados
     End Function
 
-    Public Function DeletarContato(id As Integer) As Boolean
+    Public Overrides Function DeletarContato(id As Integer) As Boolean
         Dim retorno As Boolean
         Dim query As String
 

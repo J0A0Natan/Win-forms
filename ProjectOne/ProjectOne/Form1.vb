@@ -1,12 +1,12 @@
 ﻿Public Class Form1
-    Private objContato As Object
+    Private objContato As IContato
     Public Shared tipoConFormNum As Integer
 
     Public Function tipoCon(i As Integer)
-        If i = 1 Then
-            objContato = New Contato()
-        ElseIf i = 2 Then
-            objContato = New ContatoSQL()
+        If i = 1
+            objContato = New ContatoAccsses()
+        ElseIf i = 2
+            objContato = New ContatoSQLServer()
         End If
     End Function
     
@@ -28,7 +28,7 @@
         TxtEmail.Text = ""
     End Function
 
-    Private Sub ButtonNovo_Click(sender As Object, e As EventArgs) Handles ButtonNovo.Click
+    Private Sub cmdCadastrar_Click(sender As Object, e As EventArgs) Handles cmdCadastrar.Click
         If TxtNome.Text = "" Or TxtEnd.Text = "" Or TxtCell.Text = "" Or TxtEmail.Text = ""
             MessageBox.Show("Preencha todos os campos necessarios!", "Atenção" )
         Else
@@ -51,7 +51,7 @@
         End If
     End Sub
 
-    Private Sub ButtonEdit_Click(sender As Object, e As EventArgs) Handles ButtonEdit.Click
+    Private Sub cmdEditar_Click(sender As Object, e As EventArgs) Handles cmdEditar.Click
         Dim id As Integer
         Dim dados(5) As String
 
@@ -67,7 +67,7 @@
 
     End Sub
 
-    Private Sub ButtonDell_Click(sender As Object, e As EventArgs) Handles ButtonDell.Click
+    Private Sub cmdDeletar_Click(sender As Object, e As EventArgs) Handles cmdDeletar.Click
         Dim resultado As DialogResult
         Dim nome As String
         nome = DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(1).Value
@@ -87,7 +87,7 @@
         
     End Sub
 
-    Private Sub ButtonSalvar_Click(sender As Object, e As EventArgs) Handles ButtonSalvar.Click
+    Private Sub cmdSalvar_Click(sender As Object, e As EventArgs) Handles cmdSalvar.Click
         If TxtNome.Text = "" Or TxtEnd.Text = "" Or TxtCell.Text = "" Or TxtEmail.Text = ""
             MessageBox.Show("Preencha todos os campos necessarios!", "Atenção")
         Else
@@ -120,7 +120,7 @@
         End If
     End Sub
 
-    Private Sub ButtonLimparForm_Click(sender As Object, e As EventArgs) Handles ButtonLimparForm.Click
+    Private Sub cmdLimparForm_Click(sender As Object, e As EventArgs) Handles cmdLimparForm.Click
         LimparForm()
     End Sub
 

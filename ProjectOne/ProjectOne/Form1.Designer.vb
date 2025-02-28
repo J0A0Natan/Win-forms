@@ -23,27 +23,27 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblUserName = New System.Windows.Forms.Label()
+        Me.lblEndereco = New System.Windows.Forms.Label()
+        Me.lblCell = New System.Windows.Forms.Label()
+        Me.lblTel = New System.Windows.Forms.Label()
+        Me.lblEmail = New System.Windows.Forms.Label()
         Me.TxtNome = New System.Windows.Forms.TextBox()
         Me.TxtEnd = New System.Windows.Forms.TextBox()
         Me.TxtCell = New System.Windows.Forms.TextBox()
         Me.TxtTelefone = New System.Windows.Forms.TextBox()
         Me.TxtEmail = New System.Windows.Forms.TextBox()
-        Me.ButtonNovo = New System.Windows.Forms.Button()
-        Me.ButtonSalvar = New System.Windows.Forms.Button()
-        Me.ButtonEdit = New System.Windows.Forms.Button()
-        Me.ButtonDell = New System.Windows.Forms.Button()
+        Me.cmdCadastrar = New System.Windows.Forms.Button()
+        Me.cmdSalvar = New System.Windows.Forms.Button()
+        Me.cmdEditar = New System.Windows.Forms.Button()
+        Me.cmdDeletar = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ContatosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ContatosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ContatosTableAdapter = New ProjectOne.Database2DataSetTableAdapters.contatosTableAdapter()
         Me.ContatosTableAdapter1 = New ProjectOne.Database2DataSet1TableAdapters.contatosTableAdapter()
-        Me.ButtonLimparForm = New System.Windows.Forms.Button()
+        Me.cmdLimparForm = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -54,50 +54,50 @@ Partial Class Form1
         Me.MenuStrip1.SuspendLayout
         Me.SuspendLayout
         '
-        'Label1
+        'lblUserName
         '
-        Me.Label1.AutoSize = true
-        Me.Label1.Location = New System.Drawing.Point(25, 95)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(35, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Nome"
+        Me.lblUserName.AutoSize = true
+        Me.lblUserName.Location = New System.Drawing.Point(25, 95)
+        Me.lblUserName.Name = "lblUserName"
+        Me.lblUserName.Size = New System.Drawing.Size(35, 13)
+        Me.lblUserName.TabIndex = 0
+        Me.lblUserName.Text = "Nome"
         '
-        'Label2
+        'lblEndereco
         '
-        Me.Label2.AutoSize = true
-        Me.Label2.Location = New System.Drawing.Point(25, 121)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(53, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Endereço"
+        Me.lblEndereco.AutoSize = true
+        Me.lblEndereco.Location = New System.Drawing.Point(25, 121)
+        Me.lblEndereco.Name = "lblEndereco"
+        Me.lblEndereco.Size = New System.Drawing.Size(53, 13)
+        Me.lblEndereco.TabIndex = 1
+        Me.lblEndereco.Text = "Endereço"
         '
-        'Label3
+        'lblCell
         '
-        Me.Label3.AutoSize = true
-        Me.Label3.Location = New System.Drawing.Point(25, 147)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Celular"
+        Me.lblCell.AutoSize = true
+        Me.lblCell.Location = New System.Drawing.Point(25, 147)
+        Me.lblCell.Name = "lblCell"
+        Me.lblCell.Size = New System.Drawing.Size(39, 13)
+        Me.lblCell.TabIndex = 2
+        Me.lblCell.Text = "Celular"
         '
-        'Label4
+        'lblTel
         '
-        Me.Label4.AutoSize = true
-        Me.Label4.Location = New System.Drawing.Point(25, 173)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 13)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Telefone"
+        Me.lblTel.AutoSize = true
+        Me.lblTel.Location = New System.Drawing.Point(25, 173)
+        Me.lblTel.Name = "lblTel"
+        Me.lblTel.Size = New System.Drawing.Size(49, 13)
+        Me.lblTel.TabIndex = 3
+        Me.lblTel.Text = "Telefone"
         '
-        'Label5
+        'lblEmail
         '
-        Me.Label5.AutoSize = true
-        Me.Label5.Location = New System.Drawing.Point(25, 199)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(35, 13)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "E-mail"
+        Me.lblEmail.AutoSize = true
+        Me.lblEmail.Location = New System.Drawing.Point(25, 199)
+        Me.lblEmail.Name = "lblEmail"
+        Me.lblEmail.Size = New System.Drawing.Size(35, 13)
+        Me.lblEmail.TabIndex = 4
+        Me.lblEmail.Text = "E-mail"
         '
         'TxtNome
         '
@@ -134,41 +134,41 @@ Partial Class Form1
         Me.TxtEmail.Size = New System.Drawing.Size(294, 20)
         Me.TxtEmail.TabIndex = 9
         '
-        'ButtonNovo
+        'cmdCadastrar
         '
-        Me.ButtonNovo.Location = New System.Drawing.Point(438, 92)
-        Me.ButtonNovo.Name = "ButtonNovo"
-        Me.ButtonNovo.Size = New System.Drawing.Size(101, 55)
-        Me.ButtonNovo.TabIndex = 10
-        Me.ButtonNovo.Text = "Cadastrar"
-        Me.ButtonNovo.UseVisualStyleBackColor = true
+        Me.cmdCadastrar.Location = New System.Drawing.Point(438, 92)
+        Me.cmdCadastrar.Name = "cmdCadastrar"
+        Me.cmdCadastrar.Size = New System.Drawing.Size(101, 55)
+        Me.cmdCadastrar.TabIndex = 10
+        Me.cmdCadastrar.Text = "Cadastrar"
+        Me.cmdCadastrar.UseVisualStyleBackColor = true
         '
-        'ButtonSalvar
+        'cmdSalvar
         '
-        Me.ButtonSalvar.Location = New System.Drawing.Point(570, 92)
-        Me.ButtonSalvar.Name = "ButtonSalvar"
-        Me.ButtonSalvar.Size = New System.Drawing.Size(101, 55)
-        Me.ButtonSalvar.TabIndex = 11
-        Me.ButtonSalvar.Text = "Salvar"
-        Me.ButtonSalvar.UseVisualStyleBackColor = true
+        Me.cmdSalvar.Location = New System.Drawing.Point(570, 92)
+        Me.cmdSalvar.Name = "cmdSalvar"
+        Me.cmdSalvar.Size = New System.Drawing.Size(101, 55)
+        Me.cmdSalvar.TabIndex = 11
+        Me.cmdSalvar.Text = "Salvar"
+        Me.cmdSalvar.UseVisualStyleBackColor = true
         '
-        'ButtonEdit
+        'cmdEditar
         '
-        Me.ButtonEdit.Location = New System.Drawing.Point(438, 161)
-        Me.ButtonEdit.Name = "ButtonEdit"
-        Me.ButtonEdit.Size = New System.Drawing.Size(101, 55)
-        Me.ButtonEdit.TabIndex = 12
-        Me.ButtonEdit.Text = "Editar"
-        Me.ButtonEdit.UseVisualStyleBackColor = true
+        Me.cmdEditar.Location = New System.Drawing.Point(438, 161)
+        Me.cmdEditar.Name = "cmdEditar"
+        Me.cmdEditar.Size = New System.Drawing.Size(101, 55)
+        Me.cmdEditar.TabIndex = 12
+        Me.cmdEditar.Text = "Editar"
+        Me.cmdEditar.UseVisualStyleBackColor = true
         '
-        'ButtonDell
+        'cmdDeletar
         '
-        Me.ButtonDell.Location = New System.Drawing.Point(570, 161)
-        Me.ButtonDell.Name = "ButtonDell"
-        Me.ButtonDell.Size = New System.Drawing.Size(101, 55)
-        Me.ButtonDell.TabIndex = 13
-        Me.ButtonDell.Text = "Deletar"
-        Me.ButtonDell.UseVisualStyleBackColor = true
+        Me.cmdDeletar.Location = New System.Drawing.Point(570, 161)
+        Me.cmdDeletar.Name = "cmdDeletar"
+        Me.cmdDeletar.Size = New System.Drawing.Size(101, 55)
+        Me.cmdDeletar.TabIndex = 13
+        Me.cmdDeletar.Text = "Deletar"
+        Me.cmdDeletar.UseVisualStyleBackColor = true
         '
         'Label6
         '
@@ -200,14 +200,14 @@ Partial Class Form1
         '
         Me.ContatosTableAdapter1.ClearBeforeFill = true
         '
-        'ButtonLimparForm
+        'cmdLimparForm
         '
-        Me.ButtonLimparForm.Location = New System.Drawing.Point(570, 44)
-        Me.ButtonLimparForm.Name = "ButtonLimparForm"
-        Me.ButtonLimparForm.Size = New System.Drawing.Size(101, 27)
-        Me.ButtonLimparForm.TabIndex = 19
-        Me.ButtonLimparForm.Text = "Limpar Formulario"
-        Me.ButtonLimparForm.UseVisualStyleBackColor = true
+        Me.cmdLimparForm.Location = New System.Drawing.Point(570, 44)
+        Me.cmdLimparForm.Name = "cmdLimparForm"
+        Me.cmdLimparForm.Size = New System.Drawing.Size(101, 27)
+        Me.cmdLimparForm.TabIndex = 19
+        Me.cmdLimparForm.Text = "Limpar Formulario"
+        Me.cmdLimparForm.UseVisualStyleBackColor = true
         '
         'MenuStrip1
         '
@@ -243,23 +243,23 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(699, 533)
-        Me.Controls.Add(Me.ButtonLimparForm)
+        Me.Controls.Add(Me.cmdLimparForm)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.ButtonDell)
-        Me.Controls.Add(Me.ButtonEdit)
-        Me.Controls.Add(Me.ButtonSalvar)
-        Me.Controls.Add(Me.ButtonNovo)
+        Me.Controls.Add(Me.cmdDeletar)
+        Me.Controls.Add(Me.cmdEditar)
+        Me.Controls.Add(Me.cmdSalvar)
+        Me.Controls.Add(Me.cmdCadastrar)
         Me.Controls.Add(Me.TxtEmail)
         Me.Controls.Add(Me.TxtTelefone)
         Me.Controls.Add(Me.TxtCell)
         Me.Controls.Add(Me.TxtEnd)
         Me.Controls.Add(Me.TxtNome)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblEmail)
+        Me.Controls.Add(Me.lblTel)
+        Me.Controls.Add(Me.lblCell)
+        Me.Controls.Add(Me.lblEndereco)
+        Me.Controls.Add(Me.lblUserName)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
@@ -275,27 +275,27 @@ Partial Class Form1
 
 End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents lblUserName As Label
+    Friend WithEvents lblEndereco As Label
+    Friend WithEvents lblCell As Label
+    Friend WithEvents lblTel As Label
+    Friend WithEvents lblEmail As Label
     Friend WithEvents TxtNome As TextBox
     Friend WithEvents TxtEnd As TextBox
     Friend WithEvents TxtCell As TextBox
     Friend WithEvents TxtTelefone As TextBox
     Friend WithEvents TxtEmail As TextBox
-    Friend WithEvents ButtonNovo As Button
-    Friend WithEvents ButtonSalvar As Button
-    Friend WithEvents ButtonEdit As Button
-    Friend WithEvents ButtonDell As Button
+    Friend WithEvents cmdCadastrar As Button
+    Friend WithEvents cmdSalvar As Button
+    Friend WithEvents cmdEditar As Button
+    Friend WithEvents cmdDeletar As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents ContatosBindingSource As BindingSource
     Friend WithEvents ContatosTableAdapter As Database2DataSetTableAdapters.contatosTableAdapter
     Friend WithEvents ContatosBindingSource1 As BindingSource
     Friend WithEvents ContatosTableAdapter1 As Database2DataSet1TableAdapters.contatosTableAdapter
-    Friend WithEvents ButtonLimparForm As Button
+    Friend WithEvents cmdLimparForm As Button
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents SairToolStripMenuItem As ToolStripMenuItem

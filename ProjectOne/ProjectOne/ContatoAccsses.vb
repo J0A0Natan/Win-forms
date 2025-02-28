@@ -1,6 +1,6 @@
 ﻿Imports System.Data.OleDb
 
-Public Class Contato
+Public Class ContatoAccsses: Inherits IContato
     'Atributos
     Private conn As OleDbConnection
     Private comando As OleDbCommand
@@ -19,15 +19,8 @@ Public Class Contato
         End Try
     End Sub
 
-    Public Property Id As Integer
-    Public Property Nome As String
-    Public Property Endereco As String
-    Public Property Celular As String
-    Public Property Telefone As String
-    Public Property Email As String
-
     'Metodos
-    Public Function NovoContato() As Boolean
+    Public Overrides Function NovoContato() As Boolean
         Dim retorno As Boolean
         Dim query As String
 
@@ -51,7 +44,7 @@ Public Class Contato
         End Try
     End Function
 
-    Public Function AtualizarContato() As Boolean
+    Public Overrides Function AtualizarContato() As Boolean
         Dim retorno As Boolean
         Dim query As String
 
@@ -76,7 +69,7 @@ Public Class Contato
         End Try
     End Function
 
-    Public Function ListarContato() As DataTable
+    Public Overrides Function ListarContato() As DataTable
         Dim query As String
         Dim tabela As New DataTable
 
@@ -99,7 +92,7 @@ Public Class Contato
         End Try
     End Function
 
-    Public Function ListarContatoEditar(idCont As Integer)
+    Public Overrides Function ListarContatoEditar(idCont As Integer) As Array
         Dim query As String
         Dim dados(5) As String
 
@@ -120,14 +113,14 @@ Public Class Contato
             dados(4) = dr("email").ToString()
             conn.Close()
 
-            Return dados
-
         Catch ex As Exception
             Throw ex
         End Try
+
+        Return dados
     End Function
 
-    Public Function DeletarContato(id As Integer) As Boolean
+    Public Overrides Function DeletarContato(id As Integer) As Boolean
         Dim retorno As Boolean
         Dim query As String
 
