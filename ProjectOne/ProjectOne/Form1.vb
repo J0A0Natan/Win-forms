@@ -58,7 +58,6 @@
         id= DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(0).Value
         dados = objContato.ListarContatoEditar(id)
 
-        'MessageBox.Show(dados(0).ToString)
         TxtNome.Text = dados(0)
         TxtEnd.Text = dados(1)
         TxtCell.Text = dados(2)
