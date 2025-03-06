@@ -29,7 +29,7 @@ Partial Class Form1
         Me.lblTel = New System.Windows.Forms.Label()
         Me.lblEmail = New System.Windows.Forms.Label()
         Me.TxtNome = New System.Windows.Forms.TextBox()
-        Me.TxtEnd = New System.Windows.Forms.TextBox()
+        Me.TxtEndereco = New System.Windows.Forms.TextBox()
         Me.TxtCell = New System.Windows.Forms.TextBox()
         Me.TxtTelefone = New System.Windows.Forms.TextBox()
         Me.TxtEmail = New System.Windows.Forms.TextBox()
@@ -106,12 +106,12 @@ Partial Class Form1
         Me.TxtNome.Size = New System.Drawing.Size(294, 20)
         Me.TxtNome.TabIndex = 5
         '
-        'TxtEnd
+        'TxtEndereco
         '
-        Me.TxtEnd.Location = New System.Drawing.Point(127, 118)
-        Me.TxtEnd.Name = "TxtEnd"
-        Me.TxtEnd.Size = New System.Drawing.Size(294, 20)
-        Me.TxtEnd.TabIndex = 6
+        Me.TxtEndereco.Location = New System.Drawing.Point(127, 118)
+        Me.TxtEndereco.Name = "TxtEndereco"
+        Me.TxtEndereco.Size = New System.Drawing.Size(294, 20)
+        Me.TxtEndereco.TabIndex = 6
         '
         'TxtCell
         '
@@ -253,7 +253,7 @@ Partial Class Form1
         Me.Controls.Add(Me.TxtEmail)
         Me.Controls.Add(Me.TxtTelefone)
         Me.Controls.Add(Me.TxtCell)
-        Me.Controls.Add(Me.TxtEnd)
+        Me.Controls.Add(Me.TxtEndereco)
         Me.Controls.Add(Me.TxtNome)
         Me.Controls.Add(Me.lblEmail)
         Me.Controls.Add(Me.lblTel)
@@ -281,7 +281,7 @@ End Sub
     Friend WithEvents lblTel As Label
     Friend WithEvents lblEmail As Label
     Friend WithEvents TxtNome As TextBox
-    Friend WithEvents TxtEnd As TextBox
+    Friend WithEvents TxtEndereco As TextBox
     Friend WithEvents TxtCell As TextBox
     Friend WithEvents TxtTelefone As TextBox
     Friend WithEvents TxtEmail As TextBox

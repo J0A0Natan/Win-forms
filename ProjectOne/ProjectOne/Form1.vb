@@ -22,19 +22,19 @@
 
     Private Function LimparForm()
         TxtNome.Text = ""
-        TxtEnd.Text = ""
+        TxtEndereco.Text = ""
         TxtTelefone.Text = ""
         TxtCell.Text = ""
         TxtEmail.Text = ""
     End Function
 
     Private Sub cmdCadastrar_Click(sender As Object, e As EventArgs) Handles cmdCadastrar.Click
-        If TxtNome.Text = "" Or TxtEnd.Text = "" Or TxtCell.Text = "" Or TxtEmail.Text = ""
+        If TxtNome.Text = "" Or TxtEndereco.Text = "" Or TxtCell.Text = "" Or TxtEmail.Text = ""
             MessageBox.Show("Preencha todos os campos necessarios!", "Atenção" )
         Else
             Try
                 objContato.Nome = TxtNome.Text
-                objContato.Endereco = TxtEnd.Text
+                objContato.Endereco = TxtEndereco.Text
                 objContato.Celular = TxtCell.Text
                 objContato.Telefone = TxtTelefone.Text
                 objContato.Email = TxtEmail.Text
@@ -59,7 +59,7 @@
         dados = objContato.ListarContatoEditar(id)
 
         TxtNome.Text = dados(0)
-        TxtEnd.Text = dados(1)
+        TxtEndereco.Text = dados(1)
         TxtCell.Text = dados(2)
         TxtTelefone.Text = dados(3)
         TxtEmail.Text = dados(4)
@@ -87,7 +87,7 @@
     End Sub
 
     Private Sub cmdSalvar_Click(sender As Object, e As EventArgs) Handles cmdSalvar.Click
-        If TxtNome.Text = "" Or TxtEnd.Text = "" Or TxtCell.Text = "" Or TxtEmail.Text = ""
+        If TxtNome.Text = "" Or TxtEndereco.Text = "" Or TxtCell.Text = "" Or TxtEmail.Text = ""
             MessageBox.Show("Preencha todos os campos necessarios!", "Atenção")
         Else
             Dim nome As String
@@ -100,7 +100,7 @@
                 id= DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(0).Value
                 objContato.Id = id
                 objContato.Nome = TxtNome.Text
-                objContato.Endereco = TxtEnd.Text
+                objContato.Endereco = TxtEndereco.Text
                 objContato.Celular = TxtCell.Text
                 objContato.Telefone = TxtTelefone.Text
                 objContato.Email = TxtEmail.Text
