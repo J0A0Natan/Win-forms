@@ -57,22 +57,82 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=""T:\Aplicação Windows Forms VB.NET\D"& _ 
-            "atabase\Database2.mdb""")>  _
-        Public ReadOnly Property Database2ConnectionString() As String
-            Get
-                Return CType(Me("Database2ConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=T:\WinForms\Database\Database2.mdb;U"& _ 
             "ser ID=admin")>  _
         Public ReadOnly Property Database2ConnectionString1() As String
             Get
                 Return CType(Me("Database2ConnectionString1"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ServidorSQL() As String
+            Get
+                Return CType(Me("ServidorSQL"),String)
+            End Get
+            Set
+                Me("ServidorSQL") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property BancoDeDados() As String
+            Get
+                Return CType(Me("BancoDeDados"),String)
+            End Get
+            Set
+                Me("BancoDeDados") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property UsuarioSQL() As String
+            Get
+                Return CType(Me("UsuarioSQL"),String)
+            End Get
+            Set
+                Me("UsuarioSQL") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property SenhaSQL() As String
+            Get
+                Return CType(Me("SenhaSQL"),String)
+            End Get
+            Set
+                Me("SenhaSQL") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property CaminhoAcsses() As String
+            Get
+                Return CType(Me("CaminhoAcsses"),String)
+            End Get
+            Set
+                Me("CaminhoAcsses") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=""T:\Aplicação Windows Forms VB.NET\D"& _ 
+            "atabase\Database2.mdb""")>  _
+        Public ReadOnly Property Database2ConnectionString() As String
+            Get
+                Return CType(Me("Database2ConnectionString"),String)
             End Get
         End Property
     End Class
