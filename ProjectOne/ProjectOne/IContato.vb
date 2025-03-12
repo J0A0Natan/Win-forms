@@ -1,4 +1,6 @@
-﻿Public MustInherit Class IContato
+﻿Imports ApplicationBlocks.Data
+
+Public MustInherit Class IContato
     'Propriedades
     Public Property Id As Integer
     Public Property Nome As String
@@ -95,5 +97,18 @@
         Catch ex As Exception
             Throw ex
         End Try
+    End Function
+
+    Public Function RelatorioCrystal()
+        Dim ds As New DataSet1() 
+        Dim rpt As New CrystalReport
+
+        Dim db = DbHelper.NewConnection(strCon)
+        Dim query = "SELECT * FROM contatos"
+
+        Dim dt As DataTable = DbHelper.ExecuteDataSet(strCon, CommandType.Text, query).Tables(0)
+        rpt.SetDataSource(dt)
+
+        Return rpt
     End Function
 End Class
