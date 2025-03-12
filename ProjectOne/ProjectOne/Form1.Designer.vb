@@ -38,9 +38,7 @@ Partial Class Form1
         Me.cmdEditar = New System.Windows.Forms.Button()
         Me.cmdDeletar = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.ContatosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ContatosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridView = New System.Windows.Forms.DataGridView()
         Me.ContatosTableAdapter = New ProjectOne.Database2DataSetTableAdapters.contatosTableAdapter()
         Me.ContatosTableAdapter1 = New ProjectOne.Database2DataSet1TableAdapters.contatosTableAdapter()
         Me.cmdLimparForm = New System.Windows.Forms.Button()
@@ -48,10 +46,12 @@ Partial Class Form1
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatorioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        CType(Me.DataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.ContatosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ContatosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        CType(Me.DataGridView,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.MenuStrip1.SuspendLayout
         CType(Me.ContatosBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ContatosBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.MenuStrip1.SuspendLayout
         Me.SuspendLayout
         '
         'lblUserName
@@ -180,17 +180,17 @@ Partial Class Form1
         Me.Label6.TabIndex = 17
         Me.Label6.Text = "Agenda - Contatos"
         '
-        'DataGridView1
+        'DataGridView
         '
-        Me.DataGridView1.AllowUserToAddRows = false
-        Me.DataGridView1.AllowUserToDeleteRows = false
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(28, 246)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = true
-        Me.DataGridView1.Size = New System.Drawing.Size(643, 275)
-        Me.DataGridView1.TabIndex = 18
+        Me.DataGridView.AllowUserToAddRows = false
+        Me.DataGridView.AllowUserToDeleteRows = false
+        Me.DataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView.Location = New System.Drawing.Point(28, 246)
+        Me.DataGridView.Name = "DataGridView"
+        Me.DataGridView.ReadOnly = true
+        Me.DataGridView.Size = New System.Drawing.Size(643, 275)
+        Me.DataGridView.TabIndex = 18
         '
         'ContatosTableAdapter
         '
@@ -228,13 +228,13 @@ Partial Class Form1
         'SairToolStripMenuItem
         '
         Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
-        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
+        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SairToolStripMenuItem.Text = "Sair"
         '
         'RelatorioToolStripMenuItem
         '
         Me.RelatorioToolStripMenuItem.Name = "RelatorioToolStripMenuItem"
-        Me.RelatorioToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
+        Me.RelatorioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RelatorioToolStripMenuItem.Text = "Relatorio"
         '
         'Form1
@@ -244,7 +244,7 @@ Partial Class Form1
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(699, 533)
         Me.Controls.Add(Me.cmdLimparForm)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.DataGridView)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.cmdDeletar)
         Me.Controls.Add(Me.cmdEditar)
@@ -265,11 +265,11 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Agenda de Contatos"
-        CType(Me.DataGridView1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.ContatosBindingSource1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.ContatosBindingSource,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.DataGridView,System.ComponentModel.ISupportInitialize).EndInit
         Me.MenuStrip1.ResumeLayout(false)
         Me.MenuStrip1.PerformLayout
+        CType(Me.ContatosBindingSource1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ContatosBindingSource,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
         Me.PerformLayout
 
@@ -290,7 +290,7 @@ End Sub
     Friend WithEvents cmdEditar As Button
     Friend WithEvents cmdDeletar As Button
     Friend WithEvents Label6 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridView As DataGridView
     Friend WithEvents ContatosBindingSource As BindingSource
     Friend WithEvents ContatosTableAdapter As Database2DataSetTableAdapters.contatosTableAdapter
     Friend WithEvents ContatosBindingSource1 As BindingSource

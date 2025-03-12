@@ -16,7 +16,7 @@
     End Sub
 
     Private Sub CarregarGrid()
-        DataGridView1.DataSource = objContato.ListarContato().Tables(0)
+        DataGridView.DataSource = objContato.ListarContato().Tables(0)
     End Sub
 
     Private Sub LimparForm()
@@ -54,7 +54,7 @@
         Dim id As Integer
         Dim dados(5) As String
 
-        id= DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(0).Value
+        id= DataGridView.Rows(DataGridView.CurrentCell.RowIndex).Cells(0).Value
         dados = objContato.ListarContatoEditar(id)
 
         TxtNome.Text = dados(0)
@@ -68,12 +68,12 @@
     Private Sub cmdDeletar_Click(sender As Object, e As EventArgs) Handles cmdDeletar.Click
         Dim resultado As DialogResult
         Dim nome As String
-        nome = DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(1).Value
+        nome = DataGridView.Rows(DataGridView.CurrentCell.RowIndex).Cells(1).Value
         resultado = MessageBox.Show("Tem certeza que deseja excluir o contato " & nome & "?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If resultado = DialogResult.Yes Then
             Dim id As Integer
-            id= DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(0).Value
+            id= DataGridView.Rows(DataGridView.CurrentCell.RowIndex).Cells(0).Value
         
             If objContato.DeletarContato(id) = True Then
                 MessageBox.Show("Contato deletado com sucesso!")
@@ -90,13 +90,13 @@
             MessageBox.Show("Preencha todos os campos necessarios!", "Atenção")
         Else
             Dim nome As String
-            nome = DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(1).Value
+            nome = DataGridView.Rows(DataGridView.CurrentCell.RowIndex).Cells(1).Value
             Dim resultado As DialogResult
             resultado = MessageBox.Show("Tem certeza que deseja alterar o contato " & nome & "?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
             If resultado = DialogResult.Yes Then
                 Dim id As Integer
-                id= DataGridView1.Rows(DataGridView1.CurrentCell.RowIndex).Cells(0).Value
+                id= DataGridView.Rows(DataGridView.CurrentCell.RowIndex).Cells(0).Value
                 objContato.Id = id
                 objContato.Nome = TxtNome.Text
                 objContato.Endereco = TxtEndereco.Text
