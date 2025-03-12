@@ -1,6 +1,4 @@
-﻿Imports System.Data.SqlClient
-
-Public Class SQL
+﻿Public Class SQL
     Public server As String = My.Settings.ServidorSQL
     Public dataBase As String = My.Settings.BancoDeDados
     Public user As String = My.Settings.UsuarioSQL
