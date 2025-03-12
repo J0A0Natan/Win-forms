@@ -55,9 +55,9 @@ Public Class ContatoSQLServer: Inherits IContato
         End Try
     End Function
 
-    Public Overrides Function ListarContato() As DataTable
+    Public Overrides Function ListarContato() As DataSet
         Dim query As String
-        Dim tabela As New DataTable
+        Dim tabela As New DataSet
 
         Try
             Using conn = New SqlConnection(sql.strCon)

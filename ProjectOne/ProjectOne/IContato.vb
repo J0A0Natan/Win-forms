@@ -12,7 +12,7 @@
 
     MustOverride Public Function AtualizarContato() As Boolean
 
-    MustOverride Public Function ListarContato() As DataTable
+    MustOverride Public Function ListarContato() As DataSet
 
     MustOverride Public Function ListarContatoEditar(idCont As Integer) As Array
 

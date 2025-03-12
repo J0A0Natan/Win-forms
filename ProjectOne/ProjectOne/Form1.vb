@@ -2,31 +2,30 @@
     Private objContato As IContato
     Public Shared tipoConFormNum As Integer
 
-    Public Function tipoCon(i As Integer)
+    Public Sub tipoCon(i As Integer)
         If i = 1
             objContato = New ContatoAccsses()
         ElseIf i = 2
             objContato = New ContatoSQLServer()
         End If
-    End Function
+    End Sub
     
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tipoCon(tipoConFormNum)
         CarregarGrid()
     End Sub
 
-    Private Function CarregarGrid()
-        Dim tabela As DataTable = objContato.ListarContato()
-        DataGridView1.DataSource = tabela
-    End Function
+    Private Sub CarregarGrid()
+        DataGridView1.DataSource = objContato.ListarContato().Tables(0)
+    End Sub
 
-    Private Function LimparForm()
+    Private Sub LimparForm()
         TxtNome.Text = ""
         TxtEndereco.Text = ""
         TxtTelefone.Text = ""
         TxtCell.Text = ""
         TxtEmail.Text = ""
-    End Function
+    End Sub
 
     Private Sub cmdCadastrar_Click(sender As Object, e As EventArgs) Handles cmdCadastrar.Click
         If TxtNome.Text = "" Or TxtEndereco.Text = "" Or TxtCell.Text = "" Or TxtEmail.Text = ""
