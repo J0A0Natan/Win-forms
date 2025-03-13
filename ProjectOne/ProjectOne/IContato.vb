@@ -100,10 +100,10 @@ Public MustInherit Class IContato
     End Function
 
     Public Function RelatorioCrystal()
-        'Dim ds As New DataSet1()
+        Dim ds As New DataSet1() 
         Dim rpt As New CrystalReport
 
-        Dim query = $"SELECT * FROM contatos"
+        Dim db = DbHelper.NewConnection(strCon)
 
         Dim dt As DataTable = DbHelper.ExecuteDataSet(strCon, CommandType.Text, query).Tables(0)
         rpt.SetDataSource(dt)
