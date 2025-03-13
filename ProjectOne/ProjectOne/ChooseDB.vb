@@ -19,7 +19,7 @@
     End Sub
 
     Private Sub ConfigDB_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        RadioButton1.Checked = True 
+        RadioButton1.Checked = True
     End Sub
 
     Private Sub BtnConfig_Click(sender As Object, e As EventArgs) Handles BtnConfig.Click

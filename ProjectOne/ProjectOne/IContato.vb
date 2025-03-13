@@ -13,7 +13,7 @@ Public MustInherit Class IContato
     Protected strCon
 
     'Metodos
-    Protected MustOverride Sub ConfiguraCon()
+    'Protected MustOverride Sub ConfiguraCon()
 
     Public Function NovoContato() As Boolean
         Dim query As String
@@ -100,11 +100,10 @@ Public MustInherit Class IContato
     End Function
 
     Public Function RelatorioCrystal()
-        Dim ds As New DataSet1() 
+        'Dim ds As New DataSet1()
         Dim rpt As New CrystalReport
 
-        Dim db = DbHelper.NewConnection(strCon)
-        Dim query = "SELECT * FROM contatos"
+        Dim query = $"SELECT * FROM contatos"
 
         Dim dt As DataTable = DbHelper.ExecuteDataSet(strCon, CommandType.Text, query).Tables(0)
         rpt.SetDataSource(dt)
