@@ -1,6 +1,6 @@
 ﻿Imports ApplicationBlocks.Data
 
-Public Class ContatoSQLServer : Inherits IContato
+Public Class ContatoSQLServer : Inherits Contato
     Private sql As New SQL
 
     Sub New()

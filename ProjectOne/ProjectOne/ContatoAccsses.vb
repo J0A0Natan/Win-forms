@@ -1,6 +1,6 @@
 ﻿Imports ApplicationBlocks.Data
 
-Public Class ContatoAccsses : Inherits IContato
+Public Class ContatoAccsses : Inherits Contato
     Sub New()
         Me.DbHelper = New OleDBDbHelper
         Dim pathAcsses As String = My.Settings.CaminhoAcsses

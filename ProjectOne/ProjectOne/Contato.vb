@@ -1,6 +1,6 @@
 ﻿Imports ApplicationBlocks.Data
 
-Public MustInherit Class IContato
+Public MustInherit Class Contato
     'Propriedades
     Public Property Id As Integer
     Public Property Nome As String
@@ -9,7 +9,7 @@ Public MustInherit Class IContato
     Public Property Telefone As String
     Public Property Email As String
 
-    Protected DbHelper
+    Protected DbHelper 'As New OleDBDbHelper
     Protected strCon
 
     'Metodos
@@ -100,11 +100,13 @@ Public MustInherit Class IContato
     End Function
 
     Public Function RelatorioCrystal()
-        'Dim ds As New DataSet1() 
+        Dim dt As DataTable
+        Dim ds As DataSet
         Dim rpt As New CrystalReport
-
         Dim query = "SELECT * FROM contatos"
-        Dim dt As DataTable = DbHelper.ExecuteDataSet(strCon, CommandType.Text, query).Tables(0)
+
+        ds = DbHelper.ExecuteDataset(strCon, CommandType.Text, query)
+        dt = ds.Tables(0)
         rpt.SetDataSource(dt)
 
         Return rpt

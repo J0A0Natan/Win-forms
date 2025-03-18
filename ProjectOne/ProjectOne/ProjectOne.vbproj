@@ -120,7 +120,7 @@
     <Compile Include="DataSet1.vb">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="IContato.vb" />
+    <Compile Include="Contato.vb" />
     <Compile Include="ContatoAccsses.vb" />
     <Compile Include="ContatoSQLServer.vb" />
     <Compile Include="Database2DataSet.Designer.vb">
