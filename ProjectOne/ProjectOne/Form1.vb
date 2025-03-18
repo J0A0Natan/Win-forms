@@ -1,5 +1,5 @@
 ﻿Public Class Form1
-    Private objContato As IContato
+    Private objContato As Contato
     Public Shared tipoConFormNum As Integer
 
     Public Sub tipoCon(i As Integer)
@@ -13,10 +13,21 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         tipoCon(tipoConFormNum)
         CarregarGrid()
+        dgvContatos.Columns("id").HeaderText = "ID"
+        dgvContatos.Columns("nome").HeaderText = "Nome"
+        dgvContatos.Columns("endereco").HeaderText = "Endereço"
+        dgvContatos.Columns("telefone").HeaderText = "Telefone"
+        dgvContatos.Columns("celular").HeaderText = "Celular"
+        dgvContatos.Columns("email").HeaderText = "E-mail"
+        
+        dgvContatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgvContatos.Columns("ID").Width = 40
+        dgvContatos.Columns("Telefone").Width = 90
+        dgvContatos.Columns("Celular").Width = 90
     End Sub
 
     Private Sub CarregarGrid()
-        DataGridView.DataSource = objContato.ListarContato().Tables(0)
+        dgvContatos.DataSource = objContato.ListarContato().Tables(0)
     End Sub
 
     Private Sub LimparForm()
@@ -54,7 +65,7 @@
         Dim id As Integer
         Dim dados(5) As String
 
-        id= DataGridView.Rows(DataGridView.CurrentCell.RowIndex).Cells(0).Value
+        id= dgvContatos.Rows(dgvContatos.CurrentCell.RowIndex).Cells(0).Value
         dados = objContato.ListarContatoEditar(id)
 
         TxtNome.Text = dados(0)
@@ -68,12 +79,12 @@
     Private Sub cmdDeletar_Click(sender As Object, e As EventArgs) Handles cmdDeletar.Click
         Dim resultado As DialogResult
         Dim nome As String
-        nome = DataGridView.Rows(DataGridView.CurrentCell.RowIndex).Cells(1).Value
+        nome = dgvContatos.Rows(dgvContatos.CurrentCell.RowIndex).Cells(1).Value
         resultado = MessageBox.Show("Tem certeza que deseja excluir o contato " & nome & "?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If resultado = DialogResult.Yes Then
             Dim id As Integer
-            id= DataGridView.Rows(DataGridView.CurrentCell.RowIndex).Cells(0).Value
+            id= dgvContatos.Rows(dgvContatos.CurrentCell.RowIndex).Cells(0).Value
         
             If objContato.DeletarContato(id) = True Then
                 MessageBox.Show("Contato deletado com sucesso!")
@@ -90,13 +101,13 @@
             MessageBox.Show("Preencha todos os campos necessarios!", "Atenção")
         Else
             Dim nome As String
-            nome = DataGridView.Rows(DataGridView.CurrentCell.RowIndex).Cells(1).Value
+            nome = dgvContatos.Rows(dgvContatos.CurrentCell.RowIndex).Cells(1).Value
             Dim resultado As DialogResult
             resultado = MessageBox.Show("Tem certeza que deseja alterar o contato " & nome & "?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
             If resultado = DialogResult.Yes Then
                 Dim id As Integer
-                id= DataGridView.Rows(DataGridView.CurrentCell.RowIndex).Cells(0).Value
+                id= dgvContatos.Rows(dgvContatos.CurrentCell.RowIndex).Cells(0).Value
                 objContato.Id = id
                 objContato.Nome = TxtNome.Text
                 objContato.Endereco = TxtEndereco.Text
