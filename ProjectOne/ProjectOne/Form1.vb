@@ -1,6 +1,6 @@
 ﻿Public Class Form1
     Private objContato As Contato
-    Public Shared tipoConFormNum As Integer
+    Public Shared tipoConNum As Integer
 
     Public Sub tipoCon(i As Integer)
         If i = 1
@@ -11,7 +11,7 @@
     End Sub
     
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        tipoCon(tipoConFormNum)
+        tipoCon(tipoConNum)
         CarregarGrid()
         dgvContatos.Columns("id").HeaderText = "ID"
         dgvContatos.Columns("nome").HeaderText = "Nome"
@@ -19,7 +19,7 @@
         dgvContatos.Columns("telefone").HeaderText = "Telefone"
         dgvContatos.Columns("celular").HeaderText = "Celular"
         dgvContatos.Columns("email").HeaderText = "E-mail"
-        
+
         dgvContatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         dgvContatos.Columns("ID").Width = 40
         dgvContatos.Columns("Telefone").Width = 90
@@ -52,11 +52,9 @@
                     MsgBox("Contato cadastrado com sucesso!", vbInformation)
                     CarregarGrid()
                     LimparForm()
-                Else
-                    MsgBox("ERRO: Contato não cadastrado!", vbObjectError)
                 End If
             Catch ex As Exception
-                MessageBox.Show(ex.Message)
+                MessageBox.Show("ERRO: " & ex.Message)
             End Try
         End If
     End Sub
@@ -65,7 +63,7 @@
         Dim id As Integer
         Dim dados(5) As String
 
-        id= dgvContatos.Rows(dgvContatos.CurrentCell.RowIndex).Cells(0).Value
+        id = dgvContatos.Rows(dgvContatos.CurrentRow.Index).Cells(0).Value
         dados = objContato.ListarContatoEditar(id)
 
         TxtNome.Text = dados(0)
@@ -79,35 +77,32 @@
     Private Sub cmdDeletar_Click(sender As Object, e As EventArgs) Handles cmdDeletar.Click
         Dim resultado As DialogResult
         Dim nome As String
-        nome = dgvContatos.Rows(dgvContatos.CurrentCell.RowIndex).Cells(1).Value
+        nome = dgvContatos.Rows(dgvContatos.CurrentRow.Index).Cells(1).Value
         resultado = MessageBox.Show("Tem certeza que deseja excluir o contato " & nome & "?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If resultado = DialogResult.Yes Then
             Dim id As Integer
-            id= dgvContatos.Rows(dgvContatos.CurrentCell.RowIndex).Cells(0).Value
-        
-            If objContato.DeletarContato(id) = True Then
+            id = dgvContatos.Rows(dgvContatos.CurrentRow.Index).Cells(0).Value
+
+            Try
+                objContato.DeletarContato(id)
                 MessageBox.Show("Contato deletado com sucesso!")
                 CarregarGrid()
-             Else
-                MessageBox.Show("ERRO: Contato não deletado!")
-            End If
+            Catch ex As Exception
+                MessageBox.Show("ERRO: " & ex.Message)
+            End Try
         End If
-        
     End Sub
 
     Private Sub cmdSalvar_Click(sender As Object, e As EventArgs) Handles cmdSalvar.Click
         If TxtNome.Text = "" Or TxtEndereco.Text = "" Or TxtCell.Text = "" Or TxtEmail.Text = ""
             MessageBox.Show("Preencha todos os campos necessarios!", "Atenção")
         Else
-            Dim nome As String
-            nome = dgvContatos.Rows(dgvContatos.CurrentCell.RowIndex).Cells(1).Value
-            Dim resultado As DialogResult
-            resultado = MessageBox.Show("Tem certeza que deseja alterar o contato " & nome & "?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            Dim nome = dgvContatos.SelectedRows(0).Cells(1).Value
+            Dim resultado = MessageBox.Show("Tem certeza que deseja alterar o contato " & nome & "?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
             If resultado = DialogResult.Yes Then
-                Dim id As Integer
-                id= dgvContatos.Rows(dgvContatos.CurrentCell.RowIndex).Cells(0).Value
+                Dim id = dgvContatos.Rows(dgvContatos.CurrentRow.Index).Cells(0).Value
                 objContato.Id = id
                 objContato.Nome = TxtNome.Text
                 objContato.Endereco = TxtEndereco.Text
@@ -115,15 +110,12 @@
                 objContato.Telefone = TxtTelefone.Text
                 objContato.Email = TxtEmail.Text
                 Try
-                    If objContato.AtualizarContato() = True Then
-                        MsgBox("Contato alterado com sucesso!", vbInformation)
-                        CarregarGrid()
-                        LimparForm()
-                    Else
-                        MsgBox("ERRO: Contato não alterado com sucesso!", vbObjectError)
-                    End If
+                    objContato.AtualizarContato()
+                    MsgBox("Contato alterado com sucesso!", vbInformation)
+                    CarregarGrid()
+                    LimparForm()
                 Catch ex As Exception
-                    MessageBox.Show(ex.Message)
+                    MessageBox.Show("ERRO: " & ex.Message)
                 End Try
             End If
         End If
@@ -135,10 +127,6 @@
 
     Private Sub SairToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SairToolStripMenuItem.Click
         Application.Exit()
-    End Sub
-
-    Private Sub ConfiguraçõesDBToolStripMenuItem_Click(sender As Object, e As EventArgs) 
-        ChooseDB.ShowDialog()
     End Sub
 
     Private Sub RelatorioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RelatorioToolStripMenuItem.Click

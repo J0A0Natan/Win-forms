@@ -12,9 +12,6 @@ Public MustInherit Class Contato
     Protected DbHelper 'As New OleDBDbHelper
     Protected strCon
 
-    'Metodos
-    'Protected MustOverride Sub ConfiguraCon()
-
     Public Function NovoContato() As Boolean
         Dim query As String
 
