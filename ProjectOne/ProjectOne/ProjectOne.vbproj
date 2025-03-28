@@ -116,6 +116,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="ConfgSQLServer.Designer.vb">
       <DependentUpon>ConfgSQLServer.vb</DependentUpon>
     </Compile>
