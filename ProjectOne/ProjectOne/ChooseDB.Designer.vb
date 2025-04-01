@@ -24,8 +24,8 @@ Partial Class ChooseDB
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnSelecionar = New System.Windows.Forms.Button()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.rdAccess = New System.Windows.Forms.RadioButton()
+        Me.rdSqlServer = New System.Windows.Forms.RadioButton()
         Me.BtnConfig = New System.Windows.Forms.Button()
         Me.SuspendLayout
         '
@@ -46,29 +46,29 @@ Partial Class ChooseDB
         Me.BtnSelecionar.Size = New System.Drawing.Size(121, 23)
         Me.BtnSelecionar.TabIndex = 2
         Me.BtnSelecionar.Text = "Selecionar"
-        Me.BtnSelecionar.UseVisualStyleBackColor = true
+        Me.BtnSelecionar.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'rdAccess
         '
-        Me.RadioButton1.AutoSize = true
-        Me.RadioButton1.Location = New System.Drawing.Point(130, 66)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(74, 17)
-        Me.RadioButton1.TabIndex = 3
-        Me.RadioButton1.TabStop = true
-        Me.RadioButton1.Text = "1 - Acsses"
-        Me.RadioButton1.UseVisualStyleBackColor = true
+        Me.rdAccess.AutoSize = True
+        Me.rdAccess.Location = New System.Drawing.Point(130, 66)
+        Me.rdAccess.Name = "rdAccess"
+        Me.rdAccess.Size = New System.Drawing.Size(74, 17)
+        Me.rdAccess.TabIndex = 3
+        Me.rdAccess.TabStop = True
+        Me.rdAccess.Text = "1 - Acsses"
+        Me.rdAccess.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'rdSqlServer
         '
-        Me.RadioButton2.AutoSize = true
-        Me.RadioButton2.Location = New System.Drawing.Point(130, 90)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(95, 17)
-        Me.RadioButton2.TabIndex = 4
-        Me.RadioButton2.TabStop = true
-        Me.RadioButton2.Text = "2 - SQL Server"
-        Me.RadioButton2.UseVisualStyleBackColor = true
+        Me.rdSqlServer.AutoSize = True
+        Me.rdSqlServer.Location = New System.Drawing.Point(130, 90)
+        Me.rdSqlServer.Name = "rdSqlServer"
+        Me.rdSqlServer.Size = New System.Drawing.Size(95, 17)
+        Me.rdSqlServer.TabIndex = 4
+        Me.rdSqlServer.TabStop = true
+        Me.rdSqlServer.Text = "2 - SQL Server"
+        Me.rdSqlServer.UseVisualStyleBackColor = true
         '
         'BtnConfig
         '
@@ -85,8 +85,8 @@ Partial Class ChooseDB
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(356, 276)
         Me.Controls.Add(Me.BtnConfig)
-        Me.Controls.Add(Me.RadioButton2)
-        Me.Controls.Add(Me.RadioButton1)
+        Me.Controls.Add(Me.rdSqlServer)
+        Me.Controls.Add(Me.rdAccess)
         Me.Controls.Add(Me.BtnSelecionar)
         Me.Controls.Add(Me.Label1)
         Me.Name = "ChooseDB"
@@ -98,7 +98,7 @@ Partial Class ChooseDB
 End Sub
     Friend WithEvents Label1 As Label
     Friend WithEvents BtnSelecionar As Button
-    Friend WithEvents RadioButton1 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents rdAccess As RadioButton
+    Friend WithEvents rdSqlServer As RadioButton
     Friend WithEvents BtnConfig As Button
 End Class

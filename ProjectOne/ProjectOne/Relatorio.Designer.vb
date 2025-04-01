@@ -22,11 +22,12 @@ Partial Class Relatorio
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.CrystalReport13 = New ProjectOne.CrystalReport1()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CrystalReportViewer2 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.CrystalReport11 = New ProjectOne.CrystalReport1()
+        Me.CrystalReport1 = New ProjectOne.CrystalReport()
+        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.CrystalReport3 = New ProjectOne.CrystalReport()
+        Me.CrystalReport2 = New ProjectOne.CrystalReport()
         Me.MenuStrip1.SuspendLayout
         Me.SuspendLayout
         '
@@ -35,8 +36,8 @@ Partial Class Relatorio
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SairToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1114, 24)
-        Me.MenuStrip1.TabIndex = 2
+        Me.MenuStrip1.Size = New System.Drawing.Size(1195, 24)
+        Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'SairToolStripMenuItem
@@ -45,23 +46,24 @@ Partial Class Relatorio
         Me.SairToolStripMenuItem.Size = New System.Drawing.Size(38, 20)
         Me.SairToolStripMenuItem.Text = "Sair"
         '
-        'CrystalReportViewer2
+        'CrystalReportViewer1
         '
-        Me.CrystalReportViewer2.ActiveViewIndex = -1
-        Me.CrystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CrystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CrystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CrystalReportViewer2.Location = New System.Drawing.Point(0, 24)
-        Me.CrystalReportViewer2.Name = "CrystalReportViewer2"
-        Me.CrystalReportViewer2.Size = New System.Drawing.Size(1114, 569)
-        Me.CrystalReportViewer2.TabIndex = 1
+        Me.CrystalReportViewer1.ActiveViewIndex = 0
+        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 24)
+        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
+        Me.CrystalReportViewer1.ReportSource = Me.CrystalReport3
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1195, 583)
+        Me.CrystalReportViewer1.TabIndex = 1
         '
         'Relatorio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1114, 593)
-        Me.Controls.Add(Me.CrystalReportViewer2)
+        Me.ClientSize = New System.Drawing.Size(1195, 607)
+        Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Relatorio"
@@ -73,14 +75,11 @@ Partial Class Relatorio
         Me.PerformLayout
 
 End Sub
-    Friend WithEvents CrystalReport13 As CrystalReport1
-
-    Private Sub CrystalReport11_InitReport(sender As Object, e As EventArgs)
-
-    End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents SairToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CrystalReportViewer2 As CrystalDecisions.Windows.Forms.CrystalReportViewer
-    Friend WithEvents CrystalReport11 As CrystalReport1
+    Friend WithEvents CrystalReport1 As CrystalReport
+    Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents CrystalReport2 As CrystalReport
+    Friend WithEvents CrystalReport3 As CrystalReport
 End Class
