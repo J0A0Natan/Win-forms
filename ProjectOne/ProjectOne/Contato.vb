@@ -108,4 +108,21 @@ Public MustInherit Class Contato
 
         Return rpt
     End Function
+
+    Public Function PesquisarContato(coluna As String, pesquisa As String)
+        Dim query = "SELECT * FROM contatos WHERE " + coluna + " LIKE '%" + pesquisa + "%';"
+        'Dim p1 = DbHelper.NewParameter("@coluna", coluna)
+        'Dim p2 = DbHelper.NewParameter("@pesquisa", pesquisa)
+
+        Try
+            If pesquisa <> "" Then
+                Return DbHelper.ExecuteDataset(strCon, CommandType.Text, query)
+            Else
+                Return New DataSet()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("ERRO: " + ex.Message)
+            Return Nothing
+        End Try
+    End Function
 End Class

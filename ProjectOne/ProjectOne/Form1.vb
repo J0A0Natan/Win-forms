@@ -1,5 +1,5 @@
 ﻿Public Class Form1
-    Private objContato As Contato
+    Public Shared objContato As Contato
     Public Shared tipoConNum As Integer
 
     Public Sub tipoCon(i As Integer)
@@ -131,5 +131,9 @@
 
     Private Sub RelatorioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RelatorioToolStripMenuItem.Click
         Relatorio.ShowDialog()
+    End Sub
+
+    Private Sub PesquisarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PesquisarToolStripMenuItem.Click
+        Pesquisa.ShowDialog()
     End Sub
 End Class

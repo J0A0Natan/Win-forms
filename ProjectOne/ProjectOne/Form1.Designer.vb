@@ -48,15 +48,16 @@ Partial Class Form1
         Me.RelatorioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContatosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ContatosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.dgvContatos,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.MenuStrip1.SuspendLayout
-        CType(Me.ContatosBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ContatosBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SuspendLayout
+        Me.PesquisarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        CType(Me.dgvContatos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
+        CType(Me.ContatosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ContatosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
         '
         'lblUserName
         '
-        Me.lblUserName.AutoSize = true
+        Me.lblUserName.AutoSize = True
         Me.lblUserName.Location = New System.Drawing.Point(25, 95)
         Me.lblUserName.Name = "lblUserName"
         Me.lblUserName.Size = New System.Drawing.Size(35, 13)
@@ -65,7 +66,7 @@ Partial Class Form1
         '
         'lblEndereco
         '
-        Me.lblEndereco.AutoSize = true
+        Me.lblEndereco.AutoSize = True
         Me.lblEndereco.Location = New System.Drawing.Point(25, 121)
         Me.lblEndereco.Name = "lblEndereco"
         Me.lblEndereco.Size = New System.Drawing.Size(53, 13)
@@ -74,7 +75,7 @@ Partial Class Form1
         '
         'lblCell
         '
-        Me.lblCell.AutoSize = true
+        Me.lblCell.AutoSize = True
         Me.lblCell.Location = New System.Drawing.Point(25, 147)
         Me.lblCell.Name = "lblCell"
         Me.lblCell.Size = New System.Drawing.Size(39, 13)
@@ -83,7 +84,7 @@ Partial Class Form1
         '
         'lblTel
         '
-        Me.lblTel.AutoSize = true
+        Me.lblTel.AutoSize = True
         Me.lblTel.Location = New System.Drawing.Point(25, 173)
         Me.lblTel.Name = "lblTel"
         Me.lblTel.Size = New System.Drawing.Size(49, 13)
@@ -92,7 +93,7 @@ Partial Class Form1
         '
         'lblEmail
         '
-        Me.lblEmail.AutoSize = true
+        Me.lblEmail.AutoSize = True
         Me.lblEmail.Location = New System.Drawing.Point(25, 199)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(35, 13)
@@ -141,7 +142,7 @@ Partial Class Form1
         Me.cmdCadastrar.Size = New System.Drawing.Size(111, 55)
         Me.cmdCadastrar.TabIndex = 10
         Me.cmdCadastrar.Text = "Cadastrar"
-        Me.cmdCadastrar.UseVisualStyleBackColor = true
+        Me.cmdCadastrar.UseVisualStyleBackColor = True
         '
         'cmdSalvar
         '
@@ -150,7 +151,7 @@ Partial Class Form1
         Me.cmdSalvar.Size = New System.Drawing.Size(111, 55)
         Me.cmdSalvar.TabIndex = 11
         Me.cmdSalvar.Text = "Salvar"
-        Me.cmdSalvar.UseVisualStyleBackColor = true
+        Me.cmdSalvar.UseVisualStyleBackColor = True
         '
         'cmdEditar
         '
@@ -159,7 +160,7 @@ Partial Class Form1
         Me.cmdEditar.Size = New System.Drawing.Size(111, 55)
         Me.cmdEditar.TabIndex = 12
         Me.cmdEditar.Text = "Editar"
-        Me.cmdEditar.UseVisualStyleBackColor = true
+        Me.cmdEditar.UseVisualStyleBackColor = True
         '
         'cmdDeletar
         '
@@ -168,12 +169,12 @@ Partial Class Form1
         Me.cmdDeletar.Size = New System.Drawing.Size(111, 55)
         Me.cmdDeletar.TabIndex = 13
         Me.cmdDeletar.Text = "Deletar"
-        Me.cmdDeletar.UseVisualStyleBackColor = true
+        Me.cmdDeletar.UseVisualStyleBackColor = True
         '
         'Label6
         '
-        Me.Label6.AutoSize = true
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(298, 38)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(177, 25)
@@ -182,23 +183,23 @@ Partial Class Form1
         '
         'dgvContatos
         '
-        Me.dgvContatos.AllowUserToAddRows = false
-        Me.dgvContatos.AllowUserToDeleteRows = false
+        Me.dgvContatos.AllowUserToAddRows = False
+        Me.dgvContatos.AllowUserToDeleteRows = False
         Me.dgvContatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvContatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvContatos.Location = New System.Drawing.Point(28, 246)
         Me.dgvContatos.Name = "dgvContatos"
-        Me.dgvContatos.ReadOnly = true
+        Me.dgvContatos.ReadOnly = True
         Me.dgvContatos.Size = New System.Drawing.Size(793, 275)
         Me.dgvContatos.TabIndex = 18
         '
         'ContatosTableAdapter
         '
-        Me.ContatosTableAdapter.ClearBeforeFill = true
+        Me.ContatosTableAdapter.ClearBeforeFill = True
         '
         'ContatosTableAdapter1
         '
-        Me.ContatosTableAdapter1.ClearBeforeFill = true
+        Me.ContatosTableAdapter1.ClearBeforeFill = True
         '
         'cmdLimparForm
         '
@@ -207,11 +208,11 @@ Partial Class Form1
         Me.cmdLimparForm.Size = New System.Drawing.Size(111, 27)
         Me.cmdLimparForm.TabIndex = 19
         Me.cmdLimparForm.Text = "Limpar Formulario"
-        Me.cmdLimparForm.UseVisualStyleBackColor = true
+        Me.cmdLimparForm.UseVisualStyleBackColor = True
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.PesquisarToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(833, 24)
@@ -228,14 +229,20 @@ Partial Class Form1
         'SairToolStripMenuItem
         '
         Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
-        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
+        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SairToolStripMenuItem.Text = "Sair"
         '
         'RelatorioToolStripMenuItem
         '
         Me.RelatorioToolStripMenuItem.Name = "RelatorioToolStripMenuItem"
-        Me.RelatorioToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
+        Me.RelatorioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RelatorioToolStripMenuItem.Text = "Relatorio"
+        '
+        'PesquisarToolStripMenuItem
+        '
+        Me.PesquisarToolStripMenuItem.Name = "PesquisarToolStripMenuItem"
+        Me.PesquisarToolStripMenuItem.Size = New System.Drawing.Size(69, 20)
+        Me.PesquisarToolStripMenuItem.Text = "Pesquisar"
         '
         'Form1
         '
@@ -300,4 +307,5 @@ End Sub
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents SairToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RelatorioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PesquisarToolStripMenuItem As ToolStripMenuItem
 End Class
