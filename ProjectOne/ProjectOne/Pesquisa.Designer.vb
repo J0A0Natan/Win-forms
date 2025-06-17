@@ -37,7 +37,7 @@ Partial Class Pesquisa
         '
         'textPesquisa
         '
-        Me.textPesquisa.Location = New System.Drawing.Point(12, 24)
+        Me.textPesquisa.Location = New System.Drawing.Point(199, 24)
         Me.textPesquisa.Name = "textPesquisa"
         Me.textPesquisa.Size = New System.Drawing.Size(285, 20)
         Me.textPesquisa.TabIndex = 0
@@ -91,7 +91,7 @@ Partial Class Pesquisa
         Me.GroupBox1.Controls.Add(Me.rbTelefone)
         Me.GroupBox1.Controls.Add(Me.rbNome)
         Me.GroupBox1.Controls.Add(Me.rbEndereco)
-        Me.GroupBox1.Location = New System.Drawing.Point(312, 24)
+        Me.GroupBox1.Location = New System.Drawing.Point(704, 67)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(119, 135)
         Me.GroupBox1.TabIndex = 6
@@ -113,27 +113,29 @@ Partial Class Pesquisa
         Me.dgvResultado.AllowUserToAddRows = False
         Me.dgvResultado.AllowUserToDeleteRows = False
         Me.dgvResultado.AllowUserToResizeRows = False
+        Me.dgvResultado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvResultado.Location = New System.Drawing.Point(12, 67)
         Me.dgvResultado.Name = "dgvResultado"
         Me.dgvResultado.ReadOnly = True
-        Me.dgvResultado.Size = New System.Drawing.Size(285, 150)
+        Me.dgvResultado.Size = New System.Drawing.Size(677, 135)
         Me.dgvResultado.TabIndex = 7
         '
         'btnPesquisar
         '
-        Me.btnPesquisar.Location = New System.Drawing.Point(312, 194)
+        Me.btnPesquisar.Location = New System.Drawing.Point(501, 24)
         Me.btnPesquisar.Name = "btnPesquisar"
-        Me.btnPesquisar.Size = New System.Drawing.Size(119, 23)
+        Me.btnPesquisar.Size = New System.Drawing.Size(119, 20)
         Me.btnPesquisar.TabIndex = 8
         Me.btnPesquisar.Text = "Pesquisar"
         Me.btnPesquisar.UseVisualStyleBackColor = True
+        Me.btnPesquisar.Visible = False
         '
         'Pesquisa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(443, 239)
+        Me.ClientSize = New System.Drawing.Size(841, 224)
         Me.Controls.Add(Me.btnPesquisar)
         Me.Controls.Add(Me.dgvResultado)
         Me.Controls.Add(Me.GroupBox1)
