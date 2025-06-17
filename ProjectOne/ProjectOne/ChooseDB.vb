@@ -41,7 +41,7 @@ Public Class ChooseDB
 
                 ' Mostra o resultado
                 If sucesso Then
-                    MessageBox.Show("Conexão realizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    'MessageBox.Show("Conexão realizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Me.Hide()
                     Form1.Show()
                 Else

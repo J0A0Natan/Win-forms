@@ -5,10 +5,18 @@ Public Class ConfigSQLServer
 
     Private Async Sub BtnTestar_Click(sender As Object, e As EventArgs) Handles BtnTestar.Click
         ProgressBar1.Visible = True
+        lblStatus.Visible = True
+        BtnSalvar.Visible = False
+        BtnTestar.Visible = False
+        BtnVoltar.Visible = False
         Dim result As Boolean = Await Task.Run(Function()
                                                    Return TestarCon()
                                                End Function)
         ProgressBar1.Visible = False
+        lblStatus.Visible = False
+        BtnSalvar.Visible = True
+        BtnTestar.Visible = True
+        BtnVoltar.Visible = True
 
         If result = True Then
             MsgBox("Conexão efetuada com sucesso!" & vbNewLine, vbInformation)

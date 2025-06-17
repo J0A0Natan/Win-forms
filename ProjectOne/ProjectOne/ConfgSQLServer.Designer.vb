@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ConfigSQLServer
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class ConfigSQLServer
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.TxtServer = New System.Windows.Forms.TextBox()
         Me.TxtDB = New System.Windows.Forms.TextBox()
@@ -34,6 +34,7 @@ Partial Class ConfigSQLServer
         Me.BtnTestar = New System.Windows.Forms.Button()
         Me.BtnVoltar = New System.Windows.Forms.Button()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.lblStatus = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'TxtServer
@@ -134,19 +135,31 @@ Partial Class ConfigSQLServer
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(39, 225)
+        Me.ProgressBar1.AccessibleDescription = ""
+        Me.ProgressBar1.Location = New System.Drawing.Point(39, 177)
         Me.ProgressBar1.MarqueeAnimationSpeed = 40
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(355, 14)
+        Me.ProgressBar1.Size = New System.Drawing.Size(355, 23)
         Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
         Me.ProgressBar1.TabIndex = 11
         Me.ProgressBar1.Visible = False
+        '
+        'lblStatus
+        '
+        Me.lblStatus.AutoSize = True
+        Me.lblStatus.Location = New System.Drawing.Point(41, 161)
+        Me.lblStatus.Name = "lblStatus"
+        Me.lblStatus.Size = New System.Drawing.Size(105, 13)
+        Me.lblStatus.TabIndex = 12
+        Me.lblStatus.Text = "Testando conexão..."
+        Me.lblStatus.Visible = False
         '
         'ConfigSQLServer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(440, 250)
+        Me.Controls.Add(Me.lblStatus)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.BtnVoltar)
         Me.Controls.Add(Me.BtnTestar)
@@ -162,10 +175,10 @@ Partial Class ConfigSQLServer
         Me.Name = "ConfigSQLServer"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ConfgSQLServer"
-        Me.ResumeLayout(false)
-        Me.PerformLayout
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
 
-End Sub
+    End Sub
 
     Friend WithEvents TxtServer As TextBox
     Friend WithEvents TxtDB As TextBox
@@ -179,4 +192,5 @@ End Sub
     Friend WithEvents BtnTestar As Button
     Friend WithEvents BtnVoltar As Button
     Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents lblStatus As Label
 End Class
