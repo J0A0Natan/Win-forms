@@ -33,7 +33,8 @@ Partial Class ConfigSQLServer
         Me.BtnSalvar = New System.Windows.Forms.Button()
         Me.BtnTestar = New System.Windows.Forms.Button()
         Me.BtnVoltar = New System.Windows.Forms.Button()
-        Me.SuspendLayout
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.SuspendLayout()
         '
         'TxtServer
         '
@@ -66,7 +67,7 @@ Partial Class ConfigSQLServer
         '
         'Label1
         '
-        Me.Label1.AutoSize = true
+        Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(37, 35)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(38, 13)
@@ -76,7 +77,7 @@ Partial Class ConfigSQLServer
         '
         'Label2
         '
-        Me.Label2.AutoSize = true
+        Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(36, 61)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(85, 13)
@@ -86,7 +87,7 @@ Partial Class ConfigSQLServer
         '
         'Label3
         '
-        Me.Label3.AutoSize = true
+        Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(37, 87)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(43, 13)
@@ -96,7 +97,7 @@ Partial Class ConfigSQLServer
         '
         'Label4
         '
-        Me.Label4.AutoSize = true
+        Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(36, 113)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(38, 13)
@@ -111,7 +112,7 @@ Partial Class ConfigSQLServer
         Me.BtnSalvar.Size = New System.Drawing.Size(94, 24)
         Me.BtnSalvar.TabIndex = 8
         Me.BtnSalvar.Text = "Salvar"
-        Me.BtnSalvar.UseVisualStyleBackColor = true
+        Me.BtnSalvar.UseVisualStyleBackColor = True
         '
         'BtnTestar
         '
@@ -120,7 +121,7 @@ Partial Class ConfigSQLServer
         Me.BtnTestar.Size = New System.Drawing.Size(94, 24)
         Me.BtnTestar.TabIndex = 9
         Me.BtnTestar.Text = "Testar Conexão"
-        Me.BtnTestar.UseVisualStyleBackColor = true
+        Me.BtnTestar.UseVisualStyleBackColor = True
         '
         'BtnVoltar
         '
@@ -129,13 +130,24 @@ Partial Class ConfigSQLServer
         Me.BtnVoltar.Size = New System.Drawing.Size(94, 24)
         Me.BtnVoltar.TabIndex = 10
         Me.BtnVoltar.Text = "Voltar"
-        Me.BtnVoltar.UseVisualStyleBackColor = true
+        Me.BtnVoltar.UseVisualStyleBackColor = True
+        '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(39, 225)
+        Me.ProgressBar1.MarqueeAnimationSpeed = 40
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(355, 14)
+        Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
+        Me.ProgressBar1.TabIndex = 11
+        Me.ProgressBar1.Visible = False
         '
         'ConfigSQLServer
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(440, 250)
+        Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.BtnVoltar)
         Me.Controls.Add(Me.BtnTestar)
         Me.Controls.Add(Me.BtnSalvar)
@@ -166,4 +178,5 @@ End Sub
     Friend WithEvents BtnSalvar As Button
     Friend WithEvents BtnTestar As Button
     Friend WithEvents BtnVoltar As Button
+    Friend WithEvents ProgressBar1 As ProgressBar
 End Class

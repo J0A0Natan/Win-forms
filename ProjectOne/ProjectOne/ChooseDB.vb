@@ -1,5 +1,10 @@
-﻿Public Class ChooseDB
-    Private Sub BtnSelecionar_Click(sender As Object, e As EventArgs) Handles BtnSelecionar.Click
+﻿Imports System.Data.SqlClient
+
+Public Class ChooseDB
+    Private conn As SqlConnection
+    Private ReadOnly sqlString As New SQL
+
+    Private Async Sub BtnSelecionar_Click(sender As Object, e As EventArgs) Handles BtnSelecionar.Click
         Dim escolha As Integer
         If rdAccess.Checked = True Then
             escolha = 1
@@ -13,8 +18,36 @@
             MsgBox("Configure a conexão com o banco antes!", vbExclamation, "Atenção")
         Else
             Form1.tipoConNum = escolha
-            Me.Hide()
-            Form1.Show()
+            If escolha = 1 Then
+                Me.Hide()
+                Form1.Show()
+            Else
+                ' Mostra os elementos de "carregando"
+                lblStatus.Visible = True
+                ProgressBar1.Visible = True
+                BtnSelecionar.Enabled = False
+                BtnConfig.Enabled = False
+
+                ' Executa a conexão em segundo plano
+                Dim sucesso As Boolean = Await Task.Run(Function()
+                                                            Return TestarConSQL()
+                                                        End Function)
+
+                ' Esconde os elementos de carregando
+                lblStatus.Visible = False
+                ProgressBar1.Visible = False
+                BtnSelecionar.Enabled = True
+                BtnConfig.Enabled = True
+
+                ' Mostra o resultado
+                If sucesso Then
+                    MessageBox.Show("Conexão realizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Me.Hide()
+                    Form1.Show()
+                Else
+                    MessageBox.Show("Erro ao conectar ao banco.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End If
         End If
     End Sub
 
@@ -31,4 +64,17 @@
             Me.Hide()
         End If
     End Sub
+
+    Public Function TestarConSQL() As Boolean
+        Dim strCon = sqlString.strCon
+
+        Try
+            Using conn = New SqlConnection(strCon)
+                conn.Open()
+                Return True
+            End Using
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
 End Class

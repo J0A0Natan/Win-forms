@@ -3,20 +3,17 @@
 Public Class ConfigSQLServer
     Private conn As SqlConnection
 
-    Private Sub BtnTestar_Click(sender As Object, e As EventArgs) Handles BtnTestar.Click
-        If TxtServer.Text = "" Or TxtDB.Text = "" Or TxtUser.Text = ""
-            MsgBox("Preencha todos os campos necessarios!", vbExclamation, "Atenção")
-        Else
-            Dim strCon = $"Data Source={TxtServer.Text}; Integrated Security=False; Initial Catalog={TxtDB.Text}; User={TxtUser.Text}; Password={TxtPass.Text}"
+    Private Async Sub BtnTestar_Click(sender As Object, e As EventArgs) Handles BtnTestar.Click
+        ProgressBar1.Visible = True
+        Dim result As Boolean = Await Task.Run(Function()
+                                                   Return TestarCon()
+                                               End Function)
+        ProgressBar1.Visible = False
 
-            Try
-                Using conn = New SqlConnection(strCon)
-                    conn.Open()
-                    MsgBox("SQL: Conexão efetuada com sucesso!" & vbNewLine, vbInformation)
-                End Using
-            Catch ex As Exception
-                MsgBox("Falha ao conectar com o banco de dados!" & vbNewLine & ex.Message, vbCritical)
-            End Try
+        If result = True Then
+            MsgBox("Conexão efetuada com sucesso!" & vbNewLine, vbInformation)
+        Else
+            MsgBox("Falha ao conectar com o banco de dados!" & vbNewLine, vbCritical)
         End If
     End Sub
 
@@ -40,4 +37,24 @@ Public Class ConfigSQLServer
         TxtUser.Text = My.Settings.UsuarioSQL
         'TxtPass.Text = My.Settings.SenhaSQL
     End Sub
+
+    Public Function TestarCon() As Boolean
+        If TxtServer.Text = "" Or TxtDB.Text = "" Or TxtUser.Text = "" Then
+            MsgBox("Preencha todos os campos necessarios!", vbExclamation, "Atenção")
+            Return False
+        Else
+            Dim strCon = $"Data Source={TxtServer.Text}; Integrated Security=False; Initial Catalog={TxtDB.Text}; User={TxtUser.Text}; Password={My.Settings.SenhaSQL}"
+
+            Try
+                Using conn = New SqlConnection(strCon)
+                    conn.Open()
+                    Return True
+                    'MsgBox("SQL: Conexão efetuada com sucesso!" & vbNewLine, vbInformation)
+                End Using
+            Catch 'ex As Exception
+                Return False
+                'MsgBox("Falha ao conectar com o banco de dados!" & vbNewLine & ex.Message, vbCritical)
+            End Try
+        End If
+    End Function
 End Class
