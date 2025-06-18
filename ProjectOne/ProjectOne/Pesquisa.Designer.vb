@@ -31,13 +31,15 @@ Partial Class Pesquisa
         Me.rbEmail = New System.Windows.Forms.RadioButton()
         Me.dgvResultado = New System.Windows.Forms.DataGridView()
         Me.btnPesquisar = New System.Windows.Forms.Button()
+        Me.cbAntes = New System.Windows.Forms.CheckBox()
+        Me.cbDepois = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvResultado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'textPesquisa
         '
-        Me.textPesquisa.Location = New System.Drawing.Point(199, 24)
+        Me.textPesquisa.Location = New System.Drawing.Point(243, 22)
         Me.textPesquisa.Name = "textPesquisa"
         Me.textPesquisa.Size = New System.Drawing.Size(285, 20)
         Me.textPesquisa.TabIndex = 0
@@ -123,19 +125,43 @@ Partial Class Pesquisa
         '
         'btnPesquisar
         '
-        Me.btnPesquisar.Location = New System.Drawing.Point(501, 24)
+        Me.btnPesquisar.Location = New System.Drawing.Point(534, 22)
         Me.btnPesquisar.Name = "btnPesquisar"
-        Me.btnPesquisar.Size = New System.Drawing.Size(119, 20)
+        Me.btnPesquisar.Size = New System.Drawing.Size(119, 21)
         Me.btnPesquisar.TabIndex = 8
         Me.btnPesquisar.Text = "Pesquisar"
         Me.btnPesquisar.UseVisualStyleBackColor = True
         Me.btnPesquisar.Visible = False
+        '
+        'cbAntes
+        '
+        Me.cbAntes.AutoSize = True
+        Me.cbAntes.Location = New System.Drawing.Point(12, 26)
+        Me.cbAntes.Name = "cbAntes"
+        Me.cbAntes.Size = New System.Drawing.Size(64, 17)
+        Me.cbAntes.TabIndex = 9
+        Me.cbAntes.Text = "% Antes"
+        Me.cbAntes.UseVisualStyleBackColor = True
+        '
+        'cbDepois
+        '
+        Me.cbDepois.AutoSize = True
+        Me.cbDepois.Checked = True
+        Me.cbDepois.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbDepois.Location = New System.Drawing.Point(82, 26)
+        Me.cbDepois.Name = "cbDepois"
+        Me.cbDepois.Size = New System.Drawing.Size(70, 17)
+        Me.cbDepois.TabIndex = 10
+        Me.cbDepois.Text = "% Depois"
+        Me.cbDepois.UseVisualStyleBackColor = True
         '
         'Pesquisa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(841, 224)
+        Me.Controls.Add(Me.cbDepois)
+        Me.Controls.Add(Me.cbAntes)
         Me.Controls.Add(Me.btnPesquisar)
         Me.Controls.Add(Me.dgvResultado)
         Me.Controls.Add(Me.GroupBox1)
@@ -161,4 +187,6 @@ Partial Class Pesquisa
     Friend WithEvents rbEmail As RadioButton
     Friend WithEvents dgvResultado As DataGridView
     Friend WithEvents btnPesquisar As Button
+    Friend WithEvents cbAntes As CheckBox
+    Friend WithEvents cbDepois As CheckBox
 End Class

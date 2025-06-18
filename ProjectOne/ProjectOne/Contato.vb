@@ -111,7 +111,7 @@ Public MustInherit Class Contato
 
     Public Function PesquisarContato(coluna As String, pesquisa As String)
         'Dim query = "SELECT * FROM contatos WHERE @coluna LIKE '%@pesquisa%';"
-        Dim query = "SELECT * FROM contatos WHERE " + coluna + " LIKE '%" + pesquisa + "%';"
+        Dim query = "SELECT * FROM contatos WHERE " + coluna + " LIKE '" + pesquisa + "';"
         'Dim p1 = DbHelper.NewParameter("@coluna", DbType.String, coluna)
         'Dim p2 = DbHelper.NewParameter("@pesquisa", DbType.String, pesquisa)
 
