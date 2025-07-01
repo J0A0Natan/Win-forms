@@ -1,6 +1,4 @@
-﻿Imports ApplicationBlocks.Data
-
-Public MustInherit Class Contato
+﻿Public Class Contato
     'Propriedades
     Public Property Id As Integer
     Public Property Nome As String
@@ -9,55 +7,26 @@ Public MustInherit Class Contato
     Public Property Telefone As String
     Public Property Email As String
 
-    Protected DbHelper 'As New OleDBDbHelper
-    Protected strCon
+    Private ReadOnly helper As New Helper
 
     Public Function NovoContato() As Boolean
-        Dim query As String
-
-        Try
-            query = "INSERT INTO contatos(nome, endereco, celular, telefone, email) VALUES (@nome, @endereco, @celular, @telefone, @email);"
-
-            Dim p1 = DbHelper.NewParameter("@nome", Nome)
-            Dim p2 = DbHelper.NewParameter("@endereco", Endereco)
-            Dim p3 = DbHelper.NewParameter("@celular", Celular)
-            Dim p4 = DbHelper.NewParameter("@telefone", Telefone)
-            Dim p5 = DbHelper.NewParameter("@email", Email)
-
-            Return DbHelper.ExecuteNonQuery(strCon, CommandType.Text, query, p1, p2, p3, p4, p5)
-        Catch ex As Exception
-            Throw ex
-        End Try
+        Dim dados As New Dictionary(Of String, Object) From {{"nome", Nome}, {"endereco", Endereco}, {"celular", Celular}, {"telefone", Telefone}, {"email", Email}}
+        Return helper.Insert("contatos", dados)
     End Function
 
     Public Function AtualizarContato() As Boolean
-        Dim query As String
-        Dim p1, p2, p3, p4, p5, p6
-
-        Try
-            query = "UPDATE contatos SET nome = @nome, endereco = @endereco, celular = @celular, telefone = @telefone, email = @email WHERE id = @id;"
-
-            p1 = DbHelper.NewParameter("@nome", Nome)
-            p2 = DbHelper.NewParameter("@endereco", Endereco)
-            p3 = DbHelper.NewParameter("@celular", Celular)
-            p4 = DbHelper.NewParameter("@telefone", Telefone)
-            p5 = DbHelper.NewParameter("@email", Email)
-            p6 = DbHelper.NewParameter("@id", Id)
-
-            Return DbHelper.ExecuteNonQuery(strCon, CommandType.Text, query, p1, p2, p3, p4, p5, p6)
-        Catch ex As Exception
-            Throw ex
-        End Try
+        Dim dados As New Dictionary(Of String, Object) From {{"nome", Nome}, {"endereco", Endereco}, {"celular", Celular}, {"telefone", Telefone}, {"email", Email}}
+        Dim parametrosCondicao As New Dictionary(Of String, Object) From {{"@id", Id}}
+        Return helper.Update("contatos", dados, "id = @id", parametrosCondicao)
     End Function
 
-    Public Function ListarContato() As DataSet
-        Dim query As String
-        Try
-            query = "SELECT id, nome, endereco, celular, telefone, email FROM contatos ORDER BY id DESC;"
-            Return DbHelper.ExecuteDataset(strCon, CommandType.Text, query)
-        Catch ex As Exception
-            Throw ex
-        End Try
+    Public Function DeletarContato(id As Integer) As Boolean
+        Return helper.Delete("contatos", "id", id)
+    End Function
+
+    Public Function ListarContato() As DataTable
+        Dim colunas As New List(Of String) From {"id", "nome", "endereco", "celular", "telefone", "email"}
+        Return helper.Select_(colunas, "contatos", orderBy:="id", ascDesc:="desc")
     End Function
 
     Public Function ListarContatoEditar(idCont As Integer) As Array
@@ -67,8 +36,8 @@ Public MustInherit Class Contato
         Try
             query = "SELECT id, nome, endereco, celular, telefone, email FROM contatos WHERE id = @id;"
 
-            Dim param = DbHelper.NewParameter("@id", idCont)
-            Dim dr = DbHelper.ExecuteReader(strCon, CommandType.Text, query, param)
+            Dim param = helper.DbHelper.NewParameter("@id", idCont)
+            Dim dr = helper.DbHelper.ExecuteReader(helper.strCon, CommandType.Text, query, param)
             dr.Read()
 
             dados(0) = dr("nome").ToString()
@@ -76,21 +45,7 @@ Public MustInherit Class Contato
             dados(2) = dr("celular").ToString()
             dados(3) = dr("telefone").ToString()
             dados(4) = dr("email").ToString()
-        Catch ex As Exception
-            Throw ex
-        End Try
-
-        Return dados
-    End Function
-
-    Public Function DeletarContato(id As Integer) As Boolean
-        Dim query As String
-
-        Try
-            query = "DELETE FROM contatos WHERE id=@id;"
-            Dim p1 = DbHelper.NewParameter("@id", id)
-
-            Return DbHelper.ExecuteNonQuery(strCon, CommandType.Text, query, p1)
+            Return dados
         Catch ex As Exception
             Throw ex
         End Try
@@ -102,7 +57,7 @@ Public MustInherit Class Contato
         Dim rpt As New CrystalReport
         Dim query = "SELECT * FROM contatos"
 
-        ds = DbHelper.ExecuteDataset(strCon, CommandType.Text, query)
+        ds = helper.DbHelper.ExecuteDataset(helper.strCon, CommandType.Text, query)
         dt = ds.Tables(0)
         rpt.SetDataSource(dt)
 
@@ -110,22 +65,16 @@ Public MustInherit Class Contato
     End Function
 
     Public Function PesquisarContato(coluna As String, pesquisa As String)
-        'Dim query = "SELECT * FROM contatos WHERE @coluna LIKE '%@pesquisa%';"
-        Dim query = "SELECT * FROM contatos WHERE " + coluna + " LIKE '" + pesquisa + "';"
-        'Dim p1 = DbHelper.NewParameter("@coluna", DbType.String, coluna)
-        'Dim p2 = DbHelper.NewParameter("@pesquisa", DbType.String, pesquisa)
+        Dim query = $"SELECT * FROM contatos WHERE {coluna} LIKE @pesquisa"
+        Dim param = helper.DbHelper.NewParameter("@pesquisa", DbType.String, pesquisa)
 
         Try
-            If pesquisa <> "" Then
-                Return DbHelper.ExecuteDataset(strCon, CommandType.Text, query)
-                'Return DbHelper.ExecuteDataset(strCon, CommandType.Text, query, p1, p2)
+            If pesquisa <> "%" And pesquisa <> "%%" Then
+                Return helper.DbHelper.ExecuteDataset(helper.strCon, CommandType.Text, query, param)
             Else
                 Return New DataSet()
             End If
 
-            'Dim ds As New DataSet
-            'ds = DbHelper.ExecuteDataset(strCon, CommandType.Text, query)
-            'Return ds
         Catch ex As Exception
             MessageBox.Show("ERRO: " + ex.Message)
             Return Nothing

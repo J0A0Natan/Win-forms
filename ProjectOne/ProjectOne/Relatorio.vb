@@ -4,12 +4,7 @@
     End Sub
 
     Private Sub Relatorio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If Form1.tipoConNum = 1 Then
-            Dim cont = New ContatoAccsses
-            CrystalReportViewer1.ReportSource = cont.RelatorioCrystal()
-        Else
-            Dim cont = New ContatoSQLServer
-            CrystalReportViewer1.ReportSource = cont.RelatorioCrystal()
-        End If
+        Dim cont = New Contato
+        CrystalReportViewer1.ReportSource = cont.RelatorioCrystal()
     End Sub
 End Class
