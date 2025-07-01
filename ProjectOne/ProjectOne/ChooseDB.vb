@@ -5,21 +5,20 @@ Public Class ChooseDB
     Private ReadOnly sqlString As New SQL
 
     Private Async Sub BtnSelecionar_Click(sender As Object, e As EventArgs) Handles BtnSelecionar.Click
-        Dim escolha As Integer
+        'Dim escolha As Integer
         If rdAccess.Checked = True Then
-            escolha = 1
+            My.Settings.TipoCon = 1
         ElseIf rdSqlServer.Checked = True Then
-            escolha = 2
+            My.Settings.TipoCon = 2
         End If
 
-        If My.Settings.CaminhoAcsses = "" And escolha = 1 Then
+        If My.Settings.CaminhoAcsses = "" And My.Settings.TipoCon = 1 Then
             MsgBox("Configure o acesso antes!", vbExclamation, "Atenção")
-        ElseIf My.Settings.ServidorSQL = "" And escolha = 2 Then
+        ElseIf My.Settings.ServidorSQL = "" And My.Settings.TipoCon = 2 Then
             MsgBox("Configure a conexão com o banco antes!", vbExclamation, "Atenção")
         Else
-            Form1.tipoConNum = escolha
-            If escolha = 1 Then
-                Me.Hide()
+            If My.Settings.TipoCon = 1 Then
+                Hide()
                 Form1.Show()
             Else
                 ' Mostra os elementos de "carregando"

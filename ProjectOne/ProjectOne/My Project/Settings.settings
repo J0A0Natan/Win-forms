@@ -33,5 +33,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Provider=Microsoft.Jet.OLEDB.4.0;Data Source="T:\Aplicação Windows Forms VB.NET\Database\Database2.mdb"</Value>
     </Setting>
+    <Setting Name="TipoCon" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

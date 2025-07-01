@@ -46,9 +46,10 @@ Partial Class Form1
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatorioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PesquisarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CadastrarUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContatosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ContatosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PesquisarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvContatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.ContatosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -212,7 +213,7 @@ Partial Class Form1
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.PesquisarToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.PesquisarToolStripMenuItem, Me.CadastrarUsuarioToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(833, 24)
@@ -229,13 +230,13 @@ Partial Class Form1
         'SairToolStripMenuItem
         '
         Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
-        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
         Me.SairToolStripMenuItem.Text = "Sair"
         '
         'RelatorioToolStripMenuItem
         '
         Me.RelatorioToolStripMenuItem.Name = "RelatorioToolStripMenuItem"
-        Me.RelatorioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RelatorioToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
         Me.RelatorioToolStripMenuItem.Text = "Relatorio"
         '
         'PesquisarToolStripMenuItem
@@ -243,6 +244,12 @@ Partial Class Form1
         Me.PesquisarToolStripMenuItem.Name = "PesquisarToolStripMenuItem"
         Me.PesquisarToolStripMenuItem.Size = New System.Drawing.Size(69, 20)
         Me.PesquisarToolStripMenuItem.Text = "Pesquisar"
+        '
+        'CadastrarUsuarioToolStripMenuItem
+        '
+        Me.CadastrarUsuarioToolStripMenuItem.Name = "CadastrarUsuarioToolStripMenuItem"
+        Me.CadastrarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(112, 20)
+        Me.CadastrarUsuarioToolStripMenuItem.Text = "Cadastrar Usuario"
         '
         'Form1
         '
@@ -308,4 +315,5 @@ End Sub
     Friend WithEvents SairToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RelatorioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PesquisarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CadastrarUsuarioToolStripMenuItem As ToolStripMenuItem
 End Class

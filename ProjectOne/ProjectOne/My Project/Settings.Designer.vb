@@ -135,6 +135,18 @@ Namespace My
                 Return CType(Me("Database2ConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property TipoCon() As Integer
+            Get
+                Return CType(Me("TipoCon"),Integer)
+            End Get
+            Set
+                Me("TipoCon") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

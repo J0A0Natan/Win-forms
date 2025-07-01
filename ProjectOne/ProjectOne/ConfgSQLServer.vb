@@ -51,7 +51,7 @@ Public Class ConfigSQLServer
             MsgBox("Preencha todos os campos necessarios!", vbExclamation, "Atenção")
             Return False
         Else
-            Dim strCon = $"Data Source={TxtServer.Text}; Integrated Security=False; Initial Catalog={TxtDB.Text}; User={TxtUser.Text}; Password={My.Settings.SenhaSQL}"
+            Dim strCon = $"Data Source={TxtServer.Text}; Integrated Security=False; Initial Catalog={TxtDB.Text}; User={TxtUser.Text}; Password={TxtPass.Text}"
 
             Try
                 Using conn = New SqlConnection(strCon)
@@ -59,7 +59,7 @@ Public Class ConfigSQLServer
                     Return True
                     'MsgBox("SQL: Conexão efetuada com sucesso!" & vbNewLine, vbInformation)
                 End Using
-            Catch 'ex As Exception
+            Catch ex As Exception
                 Return False
                 'MsgBox("Falha ao conectar com o banco de dados!" & vbNewLine & ex.Message, vbCritical)
             End Try

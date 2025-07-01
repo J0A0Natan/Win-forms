@@ -1,17 +1,17 @@
 ﻿Public Class Form1
-    Public Shared objContato As Contato
-    Public Shared tipoConNum As Integer
+    Public Shared objContato As New Contato
+    'Public Shared tipoConNum As Integer
 
-    Public Sub tipoCon(i As Integer)
-        If i = 1
-            objContato = New ContatoAccsses()
-        ElseIf i = 2
-            objContato = New ContatoSQLServer()
-        End If
-    End Sub
-    
+    'Public Sub tipoCon(i As Integer)
+    '    If i = 1
+    '        objContato = New ContatoAccsses()
+    '    ElseIf i = 2
+    '        objContato = New ContatoSQLServer()
+    '    End If
+    'End Sub
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        tipoCon(tipoConNum)
+        'objContato.tipoCon(tipoConNum)
         CarregarGrid()
         dgvContatos.Columns("id").HeaderText = "ID"
         dgvContatos.Columns("nome").HeaderText = "Nome"
@@ -27,7 +27,7 @@
     End Sub
 
     Private Sub CarregarGrid()
-        dgvContatos.DataSource = objContato.ListarContato().Tables(0)
+        dgvContatos.DataSource = objContato.ListarContato()
     End Sub
 
     Private Sub LimparForm()
@@ -98,7 +98,7 @@
         If TxtNome.Text = "" Or TxtEndereco.Text = "" Or TxtCell.Text = "" Or TxtEmail.Text = ""
             MessageBox.Show("Preencha todos os campos necessarios!", "Atenção")
         Else
-            Dim nome = dgvContatos.SelectedRows(0).Cells(1).Value
+            Dim nome = dgvContatos.Rows(dgvContatos.CurrentRow.Index).Cells(1).Value
             Dim resultado = MessageBox.Show("Tem certeza que deseja alterar o contato " & nome & "?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
             If resultado = DialogResult.Yes Then
@@ -135,5 +135,9 @@
 
     Private Sub PesquisarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PesquisarToolStripMenuItem.Click
         Pesquisa.ShowDialog()
+    End Sub
+
+    Private Sub CadastrarUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CadastrarUsuarioToolStripMenuItem.Click
+        FrmCadastroLogin.ShowDialog()
     End Sub
 End Class
