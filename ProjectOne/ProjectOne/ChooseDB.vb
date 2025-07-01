@@ -18,8 +18,8 @@ Public Class ChooseDB
             MsgBox("Configure a conexão com o banco antes!", vbExclamation, "Atenção")
         Else
             If My.Settings.TipoCon = 1 Then
-                Hide()
-                Form1.Show()
+                frmLogin.Show()
+                Close()
             Else
                 ' Mostra os elementos de "carregando"
                 lblStatus.Visible = True
@@ -41,8 +41,8 @@ Public Class ChooseDB
                 ' Mostra o resultado
                 If sucesso Then
                     'MessageBox.Show("Conexão realizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Me.Hide()
-                    Form1.Show()
+                    frmLogin.Show()
+                    Close()
                 Else
                     MessageBox.Show("Erro ao conectar ao banco.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
@@ -50,17 +50,13 @@ Public Class ChooseDB
         End If
     End Sub
 
-    Private Sub ConfigDB_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        rdAccess.Checked = True
-    End Sub
-
     Private Sub BtnConfig_Click(sender As Object, e As EventArgs) Handles BtnConfig.Click
         If rdAccess.Checked = True Then
             ConfigAcsses.Show()
-            Me.Hide()
+            Close()
         ElseIf rdSqlServer.Checked = True Then
             ConfigSQLServer.Show()
-            Me.Hide()
+            Close()
         End If
     End Sub
 

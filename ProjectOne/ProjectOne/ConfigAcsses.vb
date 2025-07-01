@@ -1,13 +1,13 @@
 ﻿Public Class ConfigAcsses
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnSalvar.Click
         My.Settings.CaminhoAcsses = TxtAcsses.Text
-        Me.Close()
         ChooseDB.Show()
+        Close()
     End Sub
 
     Private Sub BtnVoltar_Click(sender As Object, e As EventArgs) Handles BtnVoltar.Click
-        Me.Close()
         ChooseDB.Show()
+        Close()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtnSelecionar.Click

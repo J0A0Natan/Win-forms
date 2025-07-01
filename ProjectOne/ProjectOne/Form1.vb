@@ -1,17 +1,8 @@
 ﻿Public Class Form1
-    Public Shared objContato As New Contato
-    'Public Shared tipoConNum As Integer
-
-    'Public Sub tipoCon(i As Integer)
-    '    If i = 1
-    '        objContato = New ContatoAccsses()
-    '    ElseIf i = 2
-    '        objContato = New ContatoSQLServer()
-    '    End If
-    'End Sub
+    Public Shared objContato
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'objContato.tipoCon(tipoConNum)
+        objContato = New Contato
         CarregarGrid()
         dgvContatos.Columns("id").HeaderText = "ID"
         dgvContatos.Columns("nome").HeaderText = "Nome"
@@ -137,7 +128,12 @@
         Pesquisa.ShowDialog()
     End Sub
 
-    Private Sub CadastrarUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CadastrarUsuarioToolStripMenuItem.Click
+    Private Sub CadastrarUsuarioToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles CadastrarUsuarioToolStripMenuItem.Click
         FrmCadastroLogin.ShowDialog()
+    End Sub
+
+    Private Sub ConfigurarBancoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfigurarBancoToolStripMenuItem.Click
+        ChooseDB.Show()
+        Close()
     End Sub
 End Class

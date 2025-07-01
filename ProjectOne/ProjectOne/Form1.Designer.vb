@@ -39,17 +39,16 @@ Partial Class Form1
         Me.cmdDeletar = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.dgvContatos = New System.Windows.Forms.DataGridView()
-        Me.ContatosTableAdapter = New ProjectOne.Database2DataSetTableAdapters.contatosTableAdapter()
-        Me.ContatosTableAdapter1 = New ProjectOne.Database2DataSet1TableAdapters.contatosTableAdapter()
         Me.cmdLimparForm = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SairToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatorioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PesquisarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CadastrarUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContatosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ContatosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CadastrarUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConfigurarBancoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.dgvContatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.ContatosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -196,11 +195,11 @@ Partial Class Form1
         '
         'ContatosTableAdapter
         '
-        Me.ContatosTableAdapter.ClearBeforeFill = True
+        'Me.ContatosTableAdapter.ClearBeforeFill = True
         '
         'ContatosTableAdapter1
         '
-        Me.ContatosTableAdapter1.ClearBeforeFill = True
+        'Me.ContatosTableAdapter1.ClearBeforeFill = True
         '
         'cmdLimparForm
         '
@@ -213,7 +212,7 @@ Partial Class Form1
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.PesquisarToolStripMenuItem, Me.CadastrarUsuarioToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.PesquisarToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(833, 24)
@@ -222,7 +221,7 @@ Partial Class Form1
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SairToolStripMenuItem, Me.RelatorioToolStripMenuItem})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RelatorioToolStripMenuItem, Me.CadastrarUsuarioToolStripMenuItem, Me.ConfigurarBancoToolStripMenuItem, Me.SairToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(59, 20)
         Me.ToolStripMenuItem1.Text = "Opções"
@@ -230,13 +229,13 @@ Partial Class Form1
         'SairToolStripMenuItem
         '
         Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
-        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
+        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SairToolStripMenuItem.Text = "Sair"
         '
         'RelatorioToolStripMenuItem
         '
         Me.RelatorioToolStripMenuItem.Name = "RelatorioToolStripMenuItem"
-        Me.RelatorioToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
+        Me.RelatorioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RelatorioToolStripMenuItem.Text = "Relatorio"
         '
         'PesquisarToolStripMenuItem
@@ -248,8 +247,14 @@ Partial Class Form1
         'CadastrarUsuarioToolStripMenuItem
         '
         Me.CadastrarUsuarioToolStripMenuItem.Name = "CadastrarUsuarioToolStripMenuItem"
-        Me.CadastrarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(112, 20)
+        Me.CadastrarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CadastrarUsuarioToolStripMenuItem.Text = "Cadastrar Usuario"
+        '
+        'ConfigurarBancoToolStripMenuItem
+        '
+        Me.ConfigurarBancoToolStripMenuItem.Name = "ConfigurarBancoToolStripMenuItem"
+        Me.ConfigurarBancoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ConfigurarBancoToolStripMenuItem.Text = "Configurar Banco"
         '
         'Form1
         '
@@ -306,9 +311,7 @@ End Sub
     Friend WithEvents Label6 As Label
     Friend WithEvents dgvContatos As DataGridView
     Friend WithEvents ContatosBindingSource As BindingSource
-    Friend WithEvents ContatosTableAdapter As Database2DataSetTableAdapters.contatosTableAdapter
     Friend WithEvents ContatosBindingSource1 As BindingSource
-    Friend WithEvents ContatosTableAdapter1 As Database2DataSet1TableAdapters.contatosTableAdapter
     Friend WithEvents cmdLimparForm As Button
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
@@ -316,4 +319,5 @@ End Sub
     Friend WithEvents RelatorioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PesquisarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CadastrarUsuarioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ConfigurarBancoToolStripMenuItem As ToolStripMenuItem
 End Class

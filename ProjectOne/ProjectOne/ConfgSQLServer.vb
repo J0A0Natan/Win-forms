@@ -30,13 +30,13 @@ Public Class ConfigSQLServer
         My.Settings.BancoDeDados = TxtDB.Text
         My.Settings.UsuarioSQL = TxtUser.Text
         My.Settings.SenhaSQL = TxtPass.Text
-        Me.Close()
         ChooseDB.Show()
+        Close()
     End Sub
 
     Private Sub BtnVoltar_Click(sender As Object, e As EventArgs) Handles BtnVoltar.Click
-        Me.Close()
         ChooseDB.Show()
+        Close()
     End Sub
 
     Private Sub ConfigSQLServer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
