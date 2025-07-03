@@ -1,6 +1,6 @@
 ﻿Public Class FrmCadastroLogin
     Private helper 'As New Helper
-    Private Sub btnCadastrar_Click(sender As Object, e As EventArgs) Handles btnCadastrar.Click
+    Private Sub btnCadastrar_Click(sender As Object, e As EventArgs)
         Dim usuario = helper.Select_(New List(Of String) From {{"usuario"}}, "usuarios", New Dictionary(Of String, Object) From {{"usuario", txtUsuario.Text}})
 
         If usuario.Rows.Count > 0 Then

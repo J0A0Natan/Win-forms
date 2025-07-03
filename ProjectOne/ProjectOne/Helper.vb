@@ -6,7 +6,7 @@ Imports ApplicationBlocks.Data
 Public Class Helper
     Public DbHelper
     Public strCon
-    Private ReadOnly sql As New SQL
+    Private ReadOnly sql 'As New SQL
 
     ' Construtor
     Sub New()
@@ -16,6 +16,7 @@ Public Class Helper
             strCon = "Provider=Microsoft.Jet.OleDb.4.0; Data Source=" & CaminhoAcsses
         Else
             DbHelper = New SqlDbHelper
+            sql = New SQL
             strCon = sql.strCon
         End If
     End Sub
